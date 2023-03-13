@@ -1,0 +1,60 @@
+<div>
+  <h2><%= @title %></h2>
+
+  <.form
+    let={f}
+    for={@changeset}
+    id="order-form"
+    phx-target={@myself}
+    phx-change="validate"
+    phx-submit="save">
+  
+<%= label f, :order_type, "Valitse tilausmuoto" %>
+    <%= select f, :order_type, Ecto.Enum.values(Osuuspuutarha.Orders.Order, :order_type), prompt: "Ei valintaa" %>
+    <%= error_tag f, :order_type %>
+  
+    <%= label f, :location, "Valitse jakopaikka" %>
+    <%= select f, :location, Ecto.Enum.values(Osuuspuutarha.Orders.Order, :location), prompt: "Ei valintaa" %>
+    <%= error_tag f, :location %>
+  
+    <%= label f, :fname, "Etunimi" %>
+    <%= text_input f, :fname %>
+    <%= error_tag f, :fname %>
+  
+    <%= label f, :lname, "Sukunimi" %>
+    <%= text_input f, :lname %>
+    <%= error_tag f, :lname %>
+  
+    <%= label f, :address, "Katuosoite" %>
+    <%= text_input f, :address %>
+    <%= error_tag f, :address %>
+  
+    <%= label f, :pcode, "Postinumero" %>
+    <%= text_input f, :pcode %>
+    <%= error_tag f, :pcode %>
+  
+    <%= label f, :city, "Postitoimipaikka" %>
+    <%= text_input f, :city %>
+    <%= error_tag f, :city %>
+  
+    <%= label f, :phone, "Puhelinnumero" %>
+    <%= text_input f, :phone %>
+    <%= error_tag f, :phone %>
+  
+    <%= label f, :email, "Sähköpostiosoite" %>
+    <%= text_input f, :email %>
+    <%= error_tag f, :email %>
+  
+    <%= label f, :is_member, "Olen jo Livonsaaren Osuuspuutarhan jäsen" %>
+    <%= checkbox f, :is_member %>
+    <%= error_tag f, :is_member %>
+  
+    <%= label f, :split_invoice, "Haluan maksaa laskun kahdessa erässä" %>
+    <%= checkbox f, :split_invoice %>
+    <%= error_tag f, :split_invoice %>
+  
+    <div>
+      <%= submit "Tallenna", phx_disable_with: "Tallennetaan..." %>
+    </div>
+  </.form>
+</div>
