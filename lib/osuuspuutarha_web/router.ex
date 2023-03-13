@@ -19,12 +19,12 @@ defmodule OsuuspuutarhaWeb.Router do
 
     get "/", PageController, :index
 
-    live "/orders", OrderLive.Index, :index
-    live "/orders/new", OrderLive.Index, :new
-    live "/orders/:id/edit", OrderLive.Index, :edit
+    live "/tilaukset", OrderLive.Index, :index
+    live "/tilaukset/uusi", OrderLive.Index, :new
+    live "/tilaukset/:id/muokkaa", OrderLive.Index, :edit
 
-    live "/orders/:id", OrderLive.Show, :show
-    live "/orders/:id/show/edit", OrderLive.Show, :edit
+    live "/tilaukset/:id", OrderLive.Show, :show
+    live "/tilaukset/:id/nayta/muokkaa", OrderLive.Show, :edit
   end
 
   # Other scopes may use custom stacks.
