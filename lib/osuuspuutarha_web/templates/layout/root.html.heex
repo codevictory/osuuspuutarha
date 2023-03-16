@@ -14,10 +14,11 @@
       <section class="container">
         <nav>
           <ul>
-            <li><a href="https://hexdocs.pm/phoenix/overview.html">Get Started</a></li>
-            <%= if function_exported?(Routes, :live_dashboard_path, 2) do %>
-              <li><%= link "LiveDashboard", to: Routes.live_dashboard_path(@conn, :home) %></li>
-            <% end %>
+              <li><%= link "Ilmoittaudu", to: Routes.order_registration_path(@conn, :index) %></li>
+              <li><%= link "Tilaukset", to: Routes.order_index_path(@conn, :index) %></li>
+              <%= if function_exported?(Routes, :live_dashboard_path, 2) do %>
+                <li><%= link "LiveDashboard", to: Routes.live_dashboard_path(@conn, :home) %></li>
+              <% end %>
           </ul>
         </nav>
         <img src={Routes.static_path(@conn, "/images/logo.jpg")} alt="Osuuspuutarha Logo"/>
