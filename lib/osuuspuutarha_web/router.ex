@@ -18,6 +18,7 @@ defmodule OsuuspuutarhaWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/tervetuloa", PageController, :welcome
 
     live "/tilaukset", OrderLive.Index, :index
     live "/tilaukset/uusi", OrderLive.Index, :new

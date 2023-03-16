@@ -9,7 +9,7 @@
     phx-change="validate"
     phx-submit="save">
   
-<%= label f, :order_type, "Valitse tilausmuoto" %>
+    <%= label f, :order_type, "Valitse tilausmuoto" %>
     <%= select f, :order_type, Ecto.Enum.values(Osuuspuutarha.Orders.Order, :order_type), prompt: "Ei valintaa" %>
     <%= error_tag f, :order_type %>
   
@@ -54,7 +54,7 @@
     <%= error_tag f, :split_invoice %>
   
     <div>
-      <%= submit "Tallenna", phx_disable_with: "Tallennetaan..." %>
+      <%= submit @submit_text, phx_disable_with: "Tallennetaan..." %>
     </div>
   </.form>
 </div>

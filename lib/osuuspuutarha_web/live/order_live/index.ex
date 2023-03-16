@@ -17,12 +17,14 @@ defmodule OsuuspuutarhaWeb.OrderLive.Index do
   defp apply_action(socket, :edit, %{"id" => id}) do
     socket
     |> assign(:page_title, "Muokkaa tilausta")
+    |> assign(:submit_text, "Tallenna")
     |> assign(:order, Orders.get_order!(id))
   end
 
   defp apply_action(socket, :new, _params) do
     socket
     |> assign(:page_title, "Satolaatikko tilaus")
+    |> assign(:submit_text, "Lähetä")
     |> assign(:order, %Order{})
   end
 
