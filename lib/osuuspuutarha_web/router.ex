@@ -18,7 +18,6 @@ defmodule OsuuspuutarhaWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
-    get "/tervetuloa", PageController, :welcome
 
     live "/tilaukset", OrderLive.Index, :index
     live "/tilaukset/uusi", OrderLive.Index, :new
@@ -26,6 +25,9 @@ defmodule OsuuspuutarhaWeb.Router do
 
     live "/tilaukset/:id", OrderLive.Show, :show
     live "/tilaukset/:id/nayta/muokkaa", OrderLive.Show, :edit
+
+    live "/ilmoittautuminen", OrderLive.Registration, :index
+    live "/ilmoittautuminen/uusi", OrderLive.Registration, :new
   end
 
   # Other scopes may use custom stacks.

@@ -1,0 +1,26 @@
+<h2>Tervetuloa osuuspuutarhan jäseneksi</h2>
+
+<%= if @live_action == :new do %>
+  <.modal return_to={Routes.order_registration_path(@socket, :index)}>
+    <.live_component
+      module={OsuuspuutarhaWeb.OrderLive.FormComponent}
+      id={:new}
+      title={@page_title}
+      submit_text="Lähetä tilaus"
+      action={@live_action}
+      order={@order}
+      return_to={Routes.order_registration_path(@socket, :index)}
+    />
+  </.modal>
+<% end %>
+
+<p>Tarjouksemme ovat seuraavat</p>
+
+<ul>
+<li>Asd</li>
+<li>Qwe</li>
+<li>Zxc</li>
+</ul>
+
+<h3>Voit lähteä mukaan alla olevasta linkistä</h3>
+<%= link "Tilaa satolaatikko", to: Routes.order_registration_path(@socket, :new) %>
