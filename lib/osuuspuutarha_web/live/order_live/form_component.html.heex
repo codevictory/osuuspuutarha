@@ -10,11 +10,33 @@
     phx-submit="save">
   
     <%= label f, :order_type, "Valitse tilausmuoto" %>
-    <%= select f, :order_type, Ecto.Enum.values(Osuuspuutarha.Orders.Order, :order_type), prompt: "Ei valintaa" %>
+    <%= select f, 
+      :order_type, 
+      [
+        "Koko kausi": "full", 
+        "Joka toinen viikko": "everyother", 
+        "Elotilaus": "elo", 
+        "Viljely-yhteisö": "community"
+      ], 
+      prompt: "Ei valintaa" 
+    %>
     <%= error_tag f, :order_type %>
   
     <%= label f, :location, "Valitse jakopaikka" %>
-    <%= select f, :location, Ecto.Enum.values(Osuuspuutarha.Orders.Order, :location), prompt: "Ei valintaa" %>
+    <%= select f, 
+      :location, 
+      [
+        "Koroinen, Koroistentie 2": "koroinen", 
+        "Ocean Spirit, Linnankatu 37": "ocean", 
+        "Raisio, Timonkuja 8": "raisio", 
+        "Naantali, Alitalontie 20": "naantali", 
+        "Viherlassila, Alakyläntie 2": "viherlassila", 
+        "Kirjakahvila, Vanha Suurtori 3": "kirjakahvila", 
+        "Askainen, Askaistentie 986": "askainen", 
+        "Livonsaari, Pohjanpääntie 90": "livonsaari"
+      ], 
+      prompt: "Ei valintaa" 
+    %>
     <%= error_tag f, :location %>
   
     <%= label f, :fname, "Etunimi" %>
