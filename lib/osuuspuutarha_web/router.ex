@@ -10,6 +10,16 @@ defmodule OsuuspuutarhaWeb.Router do
     plug :put_secure_browser_headers
   end
 
+  pipeline :admin_browser do
+    plug :accepts, ["html"]
+    plug :fetch_session
+    plug :fetch_live_flash
+    plug :put_root_layout, {OsuuspuutarhaWeb.LayoutView, :root}
+    plug :protect_from_forgery
+    plug :put_secure_browser_headers
+    plug :auth
+  end
+
   pipeline :api do
     plug :accepts, ["json"]
   end
@@ -19,15 +29,19 @@ defmodule OsuuspuutarhaWeb.Router do
 
     get "/", PageController, :index
 
+    live "/ilmoittautuminen", OrderLive.Registration, :index
+    live "/ilmoittautuminen/uusi", OrderLive.Registration, :new
+  end
+
+  scope "/hallinta", OsuuspuutarhaWeb do
+    pipe_through :admin_browser
+
     live "/tilaukset", OrderLive.Index, :index
     live "/tilaukset/uusi", OrderLive.Index, :new
     live "/tilaukset/:id/muokkaa", OrderLive.Index, :edit
 
     live "/tilaukset/:id", OrderLive.Show, :show
     live "/tilaukset/:id/nayta/muokkaa", OrderLive.Show, :edit
-
-    live "/ilmoittautuminen", OrderLive.Registration, :index
-    live "/ilmoittautuminen/uusi", OrderLive.Registration, :new
   end
 
   # Other scopes may use custom stacks.
@@ -62,5 +76,23 @@ defmodule OsuuspuutarhaWeb.Router do
 
       forward "/mailbox", Plug.Swoosh.MailboxPreview
     end
+  end
+
+  defp auth(conn, _opts) do
+    username =
+      if Mix.env() == :prod do
+        System.fetch_env!("BA_USERNAME")
+      else
+        "dev"
+      end
+
+    password =
+      if Mix.env() == :prod do
+        System.fetch_env!("BA_PASSWORD")
+      else
+        "dev"
+      end
+
+    Plug.BasicAuth.basic_auth(conn, username: username, password: password)
   end
 end
