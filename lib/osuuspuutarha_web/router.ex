@@ -79,19 +79,8 @@ defmodule OsuuspuutarhaWeb.Router do
   end
 
   defp auth(conn, _opts) do
-    username =
-      if Mix.env() == :prod do
-        System.fetch_env!("BA_USERNAME")
-      else
-        "dev"
-      end
-
-    password =
-      if Mix.env() == :prod do
-        System.fetch_env!("BA_PASSWORD")
-      else
-        "dev"
-      end
+    username = System.fetch_env!("BA_USERNAME")
+    password = System.fetch_env!("BA_PASSWORD")
 
     Plug.BasicAuth.basic_auth(conn, username: username, password: password)
   end
