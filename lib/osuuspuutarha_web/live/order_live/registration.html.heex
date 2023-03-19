@@ -7,6 +7,7 @@
       id={:new}
       title={@page_title}
       submit_text="Lähetä tilaus"
+      has_privacy_consent={true}
       action={@live_action}
       order={@order}
       return_to={Routes.order_registration_path(@socket, :index)}

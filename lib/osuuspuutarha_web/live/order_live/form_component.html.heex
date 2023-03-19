@@ -1,4 +1,4 @@
-<div>
+<div class="form-conta">
   <h2><%= @title %></h2>
 
   <.form
@@ -39,6 +39,18 @@
     %>
     <%= error_tag f, :location %>
   
+    <div class="privacy-checkbox-container">
+      <%= checkbox f, :is_member, class: "checkbox" %>
+      <%= label f, :is_member, "Olen jo Livonsaaren Osuuspuutarhan jäsen" %>
+      <%= error_tag f, :is_member %>
+    </div>
+  
+    <div class="privacy-checkbox-container">
+      <%= checkbox f, :split_invoice, class: "checkbox"  %>
+      <%= label f, :split_invoice, "Haluan maksaa laskun kahdessa erässä" %>
+      <%= error_tag f, :split_invoice %>
+    </div>
+  
     <%= label f, :fname, "Etunimi" %>
     <%= text_input f, :fname %>
     <%= error_tag f, :fname %>
@@ -66,14 +78,17 @@
     <%= label f, :email, "Sähköpostiosoite" %>
     <%= text_input f, :email %>
     <%= error_tag f, :email %>
-  
-    <%= label f, :is_member, "Olen jo Livonsaaren Osuuspuutarhan jäsen" %>
-    <%= checkbox f, :is_member %>
-    <%= error_tag f, :is_member %>
-  
-    <%= label f, :split_invoice, "Haluan maksaa laskun kahdessa erässä" %>
-    <%= checkbox f, :split_invoice %>
-    <%= error_tag f, :split_invoice %>
+
+    <%= if @has_privacy_consent do %>
+      <div class="privacy-checkbox-container">
+        <input type="checkbox" required="true" id="privacy-consent"/>
+        <label for="privacy-consent" class="privacy-consent-text" title="Syö paskaa">
+          Olen lukenut ja hyväksyn yhteystietojeni käsittelyn
+          <a href="/privacy">rekisteri- ja tietosuojaselosteessa</a>
+          määritellyin tavoin.
+        </label>
+      </div>
+    <% end %>
   
     <div>
       <%= submit @submit_text, phx_disable_with: "Tallennetaan..." %>

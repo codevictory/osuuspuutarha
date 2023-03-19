@@ -28,6 +28,7 @@ defmodule OsuuspuutarhaWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/privacy", PageController, :privacy
 
     live "/ilmoittautuminen", OrderLive.Registration, :index
     live "/ilmoittautuminen/uusi", OrderLive.Registration, :new

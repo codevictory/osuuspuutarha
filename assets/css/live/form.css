@@ -1,0 +1,20 @@
+.checkbox-container {
+  display: flex;
+  align-items: baseline;
+}
+
+.checkbox {
+  margin-right: 1rem;
+}
+
+.privacy-checkbox-container {
+  display: flex;
+  align-items: baseline;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.privacy-consent-text {
+  margin-left: 1rem;
+  font-style: italic;
+}

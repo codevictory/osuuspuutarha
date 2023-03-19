@@ -3,6 +3,8 @@
 @import './phoenix.css';
 @import './header.css';
 @import './form_modal.css';
+@import './live/form.css';
+@import './pages/privacy.css';
 
 /* Alerts and form errors used by phx.new */
 .alert {

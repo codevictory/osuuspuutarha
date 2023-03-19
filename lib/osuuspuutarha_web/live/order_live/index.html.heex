@@ -7,6 +7,7 @@
       id={@order.id || :new}
       title={@page_title}
       submit_text={@submit_text}
+      has_privacy_consent={false}
       action={@live_action}
       order={@order}
       return_to={Routes.order_index_path(@socket, :index)}
