@@ -1,4 +1,4 @@
-<h2>Tervetuloa osuuspuutarhan jäseneksi</h2>
+<h2>Tervetuloa kauden 2023 tilaajaksi</h2>
 
 <%= if @live_action == :new do %>
   <.modal return_to={Routes.order_registration_path(@socket, :index)}>
@@ -15,13 +15,17 @@
   </.modal>
 <% end %>
 
-<h3>Tarjouksemme ovat seuraavat</h3>
+<h3>Tuotamme luomuvihanneksia jäsenillemme seuraavaan hintaan:</h3>
 
 <ul>
   <li>Koko kausi, 17 laatikkoa <b>340€</b></li>
   <li>Joka toinen viikko, 8 laatikkoa <b>195€</b></li>
   <li>Elotilaus, 11 laatikkoa <b>255€</b></li>
-  <li>Viljely-yhteisö, vuosi maksu <b>50€</b>, laatikot 17€/kpl</li>
+  <li>Viljely-yhteisö, vuosimaksu <b>50€</b>, laatikot 17€/kpl</li>
 </ul>
+
+<p>Jos et ole vielä jäsen, voit liittyä mukaan kun teet tilauksen. Liittymismaksu on 50 euroa, joka maksetaan vain kerran.</p>
+
+<p>Kysymykset ja muutokset osoitteeseen: <a href="mailto:livonsaaren.osuuspuutaha@gmail.com">livonsaaren.osuuspuutaha@gmail.com</a></p>
 
 <%= button "Tilaa satolaatikko", method: :get, to: Routes.order_registration_path(@socket, :new) %>
