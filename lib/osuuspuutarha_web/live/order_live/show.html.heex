@@ -7,6 +7,8 @@
       id={@order.id}
       title={@page_title}
       action={@live_action}
+      submit_text="Tallenna"
+      has_privacy_consent={false}
       order={@order}
       return_to={Routes.order_show_path(@socket, :show, @order)}
     />
