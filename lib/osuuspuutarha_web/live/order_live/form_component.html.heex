@@ -39,11 +39,15 @@
     %>
     <%= error_tag f, :location %>
   
-    <div class="privacy-checkbox-container">
-      <%= checkbox f, :is_member, class: "checkbox" %>
-      <%= label f, :is_member, "Olen jo Livonsaaren Osuuspuutarhan jäsen" %>
-      <%= error_tag f, :is_member %>
-    </div>
+    <%= label f, :is_member, "Jäsenyytesi" %>
+    <%= select f, 
+      :is_member, 
+      [
+        "Liity jäseneksi": :false, 
+        "Olen jo Livonsaaren Osuuspuutarhan jäsen": :true, 
+      ]
+    %>
+    <%= error_tag f, :is_member %>
   
     <div class="privacy-checkbox-container">
       <%= checkbox f, :split_invoice, class: "checkbox"  %>
