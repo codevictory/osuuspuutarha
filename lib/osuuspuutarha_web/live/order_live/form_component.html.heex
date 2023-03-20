@@ -1,4 +1,4 @@
-<div class="form-conta">
+<div class="form-container">
   <h2><%= @title %></h2>
 
   <.form
@@ -58,7 +58,7 @@
   
     <div class="checkbox-container">
       <%= checkbox f, :split_invoice, class: "checkbox"  %>
-      <%= label f, :split_invoice, "Haluan maksaa laskun kahdessa erässä" %>
+      <%= label f, :split_invoice, "Haluan maksaa laskun kahdessa erässä (sis. laskutuslisä 2,50€)" %>
       <%= error_tag f, :split_invoice %>
     </div>
   

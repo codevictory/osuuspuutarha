@@ -143,3 +143,7 @@ larger .alert p {
     opacity: 0;
   }
 }
+
+main.container {
+  margin-top: 4rem;
+}

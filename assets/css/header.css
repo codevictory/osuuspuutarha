@@ -1,17 +1,11 @@
-.header_container {
-  margin: 0 auto;
-  max-width: 80rem;
-  padding: 0 2rem;
-  position: relative;
-  width: 100%;
+.header-container {
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+  margin-bottom: 4rem;
+  display: flex;
+  align-items: center;
 }
 
-.header_title > a {
-  color: #010101;
-  font-weight: bolder;
-  font-size: 5rem;
-}
-
-.header_title > a:hover {
-  color: #4d4d4d;
+.header-title {
+  margin-bottom: 0;
 }
