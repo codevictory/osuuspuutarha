@@ -13,13 +13,20 @@
     <%= select f, 
       :order_type, 
       [
-        "Koko kausi": "full", 
-        "Joka toinen viikko": "everyother", 
-        "Elotilaus": "elo", 
-        "Viljely-yhteisö": "community"
+        "Koko kausi": :full, 
+        "Joka toinen viikko": :everyother, 
+        "Elotilaus": :elo, 
+        "Viljely-yhteisö": :community
       ], 
       prompt: "Ei valintaa" 
     %>
+    <%= if @action == :edit && @changeset.data.order_type == :everyother do %>
+      <div class="checkbox-container">
+        <%= checkbox f, :even_weeks, class: "checkbox"  %>
+        <%= label f, :even_weeks, "Parilliset viikot" %>
+        <%= error_tag f, :even_weeks %>
+      </div>
+    <% end %>
     <%= error_tag f, :order_type %>
   
     <%= label f, :location, "Valitse jakopaikka" %>
@@ -49,7 +56,7 @@
     %>
     <%= error_tag f, :is_member %>
   
-    <div class="privacy-checkbox-container">
+    <div class="checkbox-container">
       <%= checkbox f, :split_invoice, class: "checkbox"  %>
       <%= label f, :split_invoice, "Haluan maksaa laskun kahdessa erässä" %>
       <%= error_tag f, :split_invoice %>
