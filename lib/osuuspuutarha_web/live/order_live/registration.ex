@@ -21,7 +21,7 @@ defmodule OsuuspuutarhaWeb.OrderLive.Registration do
 
   defp apply_action(socket, :new) do
     socket
-    |> assign(:page_title, "Satolaatikko tilaus")
+    |> assign(:page_title, "Satolaatikkotilaus")
     |> assign(:order, %Order{})
   end
 end

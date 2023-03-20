@@ -39,7 +39,7 @@
                 Rekisteriin tallennettavia tietoja ovat:
                 <ul>
                     <li>Yhteystiedot (tilaajan koko nimi, sähköpostiosoite, puhelinnumero, kotiosoite)</li>
-                    <li>Toivottu satolaatikko tilaus tyyppi (jos joka toinen viikko, parilliset vai parittomat viikot)</li>
+                    <li>Toivottu satolaatikkotilaus tyyppi (jos joka toinen viikko, parilliset vai parittomat viikot)</li>
                     <li>Toivottu satolaatikon jakopaikka</li>
                     <li>Tieto siitä onko tilaaja jo Livonsaaren Osuuspuutarhan jäsen</li>
                     <li>Tieto siitä haluaako tilaaja maksaa tilauksensä yhdessä vai kahdessa erässä</li>

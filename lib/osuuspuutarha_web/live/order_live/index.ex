@@ -23,7 +23,7 @@ defmodule OsuuspuutarhaWeb.OrderLive.Index do
 
   defp apply_action(socket, :new, _params) do
     socket
-    |> assign(:page_title, "Satolaatikko tilaus")
+    |> assign(:page_title, "Satolaatikkotilaus")
     |> assign(:submit_text, "Lähetä")
     |> assign(:order, %Order{})
   end
