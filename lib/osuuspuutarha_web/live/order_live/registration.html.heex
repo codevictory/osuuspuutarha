@@ -24,8 +24,8 @@
   <li>Viljely-yhteisö, vuosimaksu <b>50€</b>, laatikot 17€/kpl</li>
 </ul>
 
+<%= button "Tilaa satolaatikko", method: :get, to: Routes.order_registration_path(@socket, :new), class: "registeration-button" %>
+
 <p>Jos et ole vielä jäsen, voit liittyä mukaan kun teet tilauksen. Liittymismaksu on 50 euroa, joka maksetaan vain kerran.</p>
 
 <p>Kysymykset ja muutokset osoitteeseen: <a href="mailto:livonsaaren.osuuspuutaha@gmail.com">livonsaaren.osuuspuutaha@gmail.com</a></p>
-
-<%= button "Tilaa satolaatikko", method: :get, to: Routes.order_registration_path(@socket, :new) %>
