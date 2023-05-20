@@ -77,6 +77,16 @@
     <%= @order.even_weeks %>
   </li>
 
+  <li>
+    <strong>Lisätty:</strong>
+    <%= @order.inserted_at.day %>.<%= @order.inserted_at.month %>.<%= @order.inserted_at.year %>
+  </li>
+
+  <li>
+    <strong>Viimeisin muutos:</strong>
+    <%= @order.updated_at.day %>.<%= @order.updated_at.month %>.<%= @order.updated_at.year %>
+  </li>
+
 </ul>
 
 <span><%= live_patch "Muokkaa", to: Routes.order_show_path(@socket, :edit, @order), class: "button" %></span> |

@@ -30,6 +30,8 @@
       <th>Jäsen?</th>
       <th>Kaksi laskua?</th>
       <th>Parilliset viikot</th>
+      <th>Lisätty</th>
+      <th>Viimeisin muutos</th>
 
       <th></th>
     </tr>
@@ -49,6 +51,8 @@
         <td><%= order.is_member %></td>
         <td><%= order.split_invoice %></td>
         <td><%= order.even_weeks %></td>
+        <td><%= order.inserted_at.day %>.<%= order.inserted_at.month %>.<%= order.inserted_at.year %></td>
+        <td><%= order.updated_at.day %>.<%= order.updated_at.month %>.<%= order.updated_at.year %></td>
 
         <td>
           <span><%= live_redirect "Näytä", to: Routes.order_show_path(@socket, :show, order) %></span>
