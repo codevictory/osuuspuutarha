@@ -22,11 +22,8 @@
     <tr>
       <th>Tilausmuoto</th>
       <th>Jakopaikka</th>
-      <th>Etunimi</th>
-      <th>Sukunimi</th>
+      <th>Tilaaja</th>
       <th>Osoite</th>
-      <th>Postinum.</th>
-      <th>T. paikka</th>
       <th>Puh.</th>
       <th>Säpö</th>
       <th>Jäsen?</th>
@@ -41,20 +38,17 @@
   <tbody id="orders">
     <%= for order <- @orders do %>
       <tr id={"order-#{order.id}"}>
-        <td><%= order.order_type %></td>
-        <td><%= order.location %></td>
-        <td><%= order.fname %></td>
-        <td><%= order.lname %></td>
-        <td><%= order.address %></td>
-        <td><%= order.pcode %></td>
-        <td><%= order.city %></td>
+        <td><%= Osuuspuutarha.Orders.Parser.parse_order_type(order.order_type) %></td>
+        <td><%= Osuuspuutarha.Orders.Parser.parse_location(order.location) %></td>
+        <td><%= "#{order.fname} #{order.lname}" %></td>
+        <td><%= order.address %>, <%= order.pcode %>, <%= order.city %></td>
         <td><%= order.phone %></td>
         <td><%= order.email %></td>
-        <td><%= order.is_member %></td>
-        <td><%= order.split_invoice %></td>
-        <td><%= order.even_weeks %></td>
-        <td><%= order.inserted_at.day %>.<%= order.inserted_at.month %>.<%= order.inserted_at.year %></td>
-        <td><%= order.updated_at.day %>.<%= order.updated_at.month %>.<%= order.updated_at.year %></td>
+        <td><%= Osuuspuutarha.Orders.Parser.parse_boolean(order.is_member) %></td>
+        <td><%= Osuuspuutarha.Orders.Parser.parse_boolean(order.split_invoice) %></td>
+        <td><%= Osuuspuutarha.Orders.Parser.parse_boolean(order.even_weeks) %></td>
+        <td><%= Osuuspuutarha.Orders.Parser.parse_date(order.inserted_at) %></td>
+        <td><%= Osuuspuutarha.Orders.Parser.parse_date(order.updated_at) %></td>
 
         <td>
           <span><%= live_redirect "Näytä", to: Routes.order_show_path(@socket, :show, order) %></span>
