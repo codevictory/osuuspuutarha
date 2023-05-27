@@ -45,6 +45,11 @@ defmodule OsuuspuutarhaWeb.Router do
     live "/tilaukset/:id/nayta/muokkaa", OrderLive.Show, :edit
   end
 
+  scope "/lataukset", as: :exports, alias: OsuuspuutarhaWeb.Exports do
+    pipe_through :admin_browser
+    resources "/tilaukset", OrderController, only: [:index]
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", OsuuspuutarhaWeb do
   #   pipe_through :api

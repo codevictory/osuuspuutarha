@@ -32,3 +32,6 @@ osuuspuutarha-*.tar
 npm-debug.log
 /assets/node_modules/
 
+# VS Code
+settings.json
+
