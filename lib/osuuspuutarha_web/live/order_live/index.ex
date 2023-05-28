@@ -6,7 +6,7 @@ defmodule OsuuspuutarhaWeb.OrderLive.Index do
 
   @impl true
   def mount(_params, _session, socket) do
-    {:ok, assign(socket, :orders, list_orders())}
+    {:ok, assign(socket, :orders, Orders.list_orders())}
   end
 
   @impl true
@@ -34,15 +34,25 @@ defmodule OsuuspuutarhaWeb.OrderLive.Index do
     |> assign(:order, nil)
   end
 
+  defp apply_action(socket, :sorted_asc, %{"column" => column}) do
+    socket
+    |> assign(:page_title, "Tilaukset")
+    |> assign(:orders, Orders.get_sorted_by(:asc, String.to_atom(column)))
+    |> assign(:column, String.to_atom(column))
+  end
+
+  defp apply_action(socket, :sorted_desc, %{"column" => column}) do
+    socket
+    |> assign(:page_title, "Tilaukset")
+    |> assign(:orders, Orders.get_sorted_by(:desc, String.to_atom(column)))
+    |> assign(:column, String.to_atom(column))
+  end
+
   @impl true
   def handle_event("delete", %{"id" => id}, socket) do
     order = Orders.get_order!(id)
     {:ok, _} = Orders.delete_order(order)
 
-    {:noreply, assign(socket, :orders, list_orders())}
-  end
-
-  defp list_orders do
-    Orders.list_orders()
+    {:noreply, assign(socket, :orders, Orders.list_orders())}
   end
 end

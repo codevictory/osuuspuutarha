@@ -40,6 +40,8 @@ defmodule OsuuspuutarhaWeb.Router do
     live "/tilaukset", OrderLive.Index, :index
     live "/tilaukset/uusi", OrderLive.Index, :new
     live "/tilaukset/:id/muokkaa", OrderLive.Index, :edit
+    live "/tilaukset/nouseva/:column", OrderLive.Index, :sorted_asc
+    live "/tilaukset/aleneva/:column", OrderLive.Index, :sorted_desc
 
     live "/tilaukset/:id", OrderLive.Show, :show
     live "/tilaukset/:id/nayta/muokkaa", OrderLive.Show, :edit

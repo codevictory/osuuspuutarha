@@ -101,4 +101,12 @@ defmodule Osuuspuutarha.Orders do
   def change_order(%Order{} = order, attrs \\ %{}) do
     Order.changeset(order, attrs)
   end
+
+  def get_sorted_by(:asc, column) do
+    Repo.all(Order |> order_by({:asc, ^column}))
+  end
+
+  def get_sorted_by(:desc, column) do
+    Repo.all(Order |> order_by({:desc, ^column}))
+  end
 end
