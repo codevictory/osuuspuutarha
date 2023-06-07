@@ -1,0 +1,31 @@
+<h1>Show Calendar</h1>
+
+<%= if @live_action in [:edit] do %>
+  <.modal return_to={Routes.calendar_show_path(@socket, :show, @calendar)}>
+    <.live_component
+      module={OsuuspuutarhaWeb.CalendarLive.FormComponent}
+      id={@calendar.id}
+      title={@page_title}
+      action={@live_action}
+      calendar={@calendar}
+      return_to={Routes.calendar_show_path(@socket, :show, @calendar)}
+    />
+  </.modal>
+<% end %>
+
+<ul>
+
+  <li>
+    <strong>Pickup date:</strong>
+    <%= @calendar.pickup_date %>
+  </li>
+
+  <li>
+    <strong>Is picked up:</strong>
+    <%= @calendar.is_picked_up %>
+  </li>
+
+</ul>
+
+<span><%= live_patch "Edit", to: Routes.calendar_show_path(@socket, :edit, @calendar), class: "button" %></span> |
+<span><%= live_redirect "Back", to: Routes.calendar_index_path(@socket, :index) %></span>
