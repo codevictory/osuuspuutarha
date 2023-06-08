@@ -45,6 +45,13 @@ defmodule OsuuspuutarhaWeb.Router do
 
     live "/tilaukset/:id", OrderLive.Show, :show
     live "/tilaukset/:id/nayta/muokkaa", OrderLive.Show, :edit
+
+    live "/korjuut", YieldLive.Index, :index
+    live "/korjuut/uusi", YieldLive.Index, :new
+    live "/korjuut/:id/muokkaa", YieldLive.Index, :edit
+
+    live "/korjuut/:id", YieldLive.Show, :show
+    live "/korjuut/:id/nayta/muokkaa", YieldLive.Show, :edit
   end
 
   scope "/lataukset", as: :exports, alias: OsuuspuutarhaWeb.Exports do

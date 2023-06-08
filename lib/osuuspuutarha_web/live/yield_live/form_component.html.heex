@@ -1,0 +1,32 @@
+<div>
+  <h2><%= @title %></h2>
+
+  <.form
+    let={f}
+    for={@changeset}
+    id="yield-form"
+    phx-target={@myself}
+    phx-change="validate"
+    phx-submit="save">
+  
+    <%= label f, :date %>
+    <%= date_input f, :date %>
+    <%= error_tag f, :date %>
+  
+    <%= label f, :plant %>
+    <%= select f, :plant, Ecto.Enum.values(Osuuspuutarha.Harvest.Yield, :plant), prompt: "Choose a value" %>
+    <%= error_tag f, :plant %>
+  
+    <%= label f, :amount %>
+    <%= number_input f, :amount, step: "any" %>
+    <%= error_tag f, :amount %>
+  
+    <%= label f, :unit %>
+    <%= select f, :unit, Ecto.Enum.values(Osuuspuutarha.Harvest.Yield, :unit), prompt: "Choose a value" %>
+    <%= error_tag f, :unit %>
+  
+    <div>
+      <%= submit "Save", phx_disable_with: "Saving..." %>
+    </div>
+  </.form>
+</div>

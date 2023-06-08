@@ -1,0 +1,41 @@
+<h1>Show Yield</h1>
+
+<%= if @live_action in [:edit] do %>
+  <.modal return_to={Routes.yield_show_path(@socket, :show, @yield)}>
+    <.live_component
+      module={OsuuspuutarhaWeb.YieldLive.FormComponent}
+      id={@yield.id}
+      title={@page_title}
+      action={@live_action}
+      yield={@yield}
+      return_to={Routes.yield_show_path(@socket, :show, @yield)}
+    />
+  </.modal>
+<% end %>
+
+<ul>
+
+  <li>
+    <strong>Date:</strong>
+    <%= @yield.date %>
+  </li>
+
+  <li>
+    <strong>Plant:</strong>
+    <%= @yield.plant %>
+  </li>
+
+  <li>
+    <strong>Amount:</strong>
+    <%= @yield.amount %>
+  </li>
+
+  <li>
+    <strong>Unit:</strong>
+    <%= @yield.unit %>
+  </li>
+
+</ul>
+
+<span><%= live_patch "Edit", to: Routes.yield_show_path(@socket, :edit, @yield), class: "button" %></span> |
+<span><%= live_redirect "Back", to: Routes.yield_index_path(@socket, :index) %></span>
