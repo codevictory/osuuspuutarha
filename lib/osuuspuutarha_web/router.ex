@@ -32,13 +32,6 @@ defmodule OsuuspuutarhaWeb.Router do
 
     live "/ilmoittautuminen", OrderLive.Registration, :index
     live "/ilmoittautuminen/uusi", OrderLive.Registration, :new
-
-    live "/calendars", CalendarLive.Index, :index
-    live "/calendars/new", CalendarLive.Index, :new
-    live "/calendars/:id/edit", CalendarLive.Index, :edit
-
-    live "/calendars/:id", CalendarLive.Show, :show
-    live "/calendars/:id/show/edit", CalendarLive.Show, :edit
   end
 
   scope "/hallinta", OsuuspuutarhaWeb do
