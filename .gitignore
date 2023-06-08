@@ -35,3 +35,6 @@ npm-debug.log
 # VS Code
 settings.json
 
+# Run script
+run.sh
+
