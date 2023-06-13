@@ -8,4 +8,8 @@ defmodule OsuuspuutarhaWeb.PageController do
   def privacy(conn, _params) do
     render(conn, "privacy.html")
   end
+
+  def organic(conn, _params) do
+    render(conn, "organic.html")
+  end
 end

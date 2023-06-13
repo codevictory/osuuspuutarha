@@ -1,29 +1,29 @@
-    <h1>Rekisteri- ja tietosuojaseloste</h1>
+    <h2>Rekisteri- ja tietosuojaseloste</h2>
     <div class="privacy-text">
         <p>
             Tämä on Livonsaaren Osuuspuutarhan EU:n yleisen tietosuoja-asetuksen (GDPR) mukainen rekisteri- ja tietosuojaseloste. Laadittu 19.3.2023. Viimeisin muutos 19.3.2023.
         </p>
 
-        <h2>1. Rekisterin ylläpitäjä</h2>
+        <h3>1. Rekisterin ylläpitäjä</h3>
             <p>
                 Livonsaaren Osuuspuutarha<br>
                 Pohjanpääntie 49<br>
                 21180 LIVONSAARI<br>
             </p>
 
-        <h2>2. Rekisteristä vastaava yhteyshenkilö</h2>
+        <h3>2. Rekisteristä vastaava yhteyshenkilö</h3>
             <p>
                 Veikko Lintujärvi<br>
                 veikko@lintujarvi.fi<br>
                 +358 442373706<br>
             </p>
 
-        <h2>3. Rekisterin nimi</h2>
+        <h3>3. Rekisterin nimi</h3>
             <p>
                 Tapahtuman osallistujarekisteri
             </p>
 
-        <h2>4. Oikeusperuste ja henkilötietojen käsittelyn tarkoitus</h2>
+        <h3>4. Oikeusperuste ja henkilötietojen käsittelyn tarkoitus</h3>
             <p>
                 EU:n yleisen tietosuoja-asetuksen mukainen oikeusperuste henkilötietojen käsittelylle on henkilön suostumus (dokumentoitu, vapaaehtoinen, yksilöity, tietoinen ja yksiselitteinen).
             </p>
@@ -34,7 +34,7 @@
                 Tietoja ei käytetä automatisoituun päätöksentekoon tai profilointiin.
             </p>
 
-        <h2>5. Rekisterin tietosisältö</h2>
+        <h3>5. Rekisterin tietosisältö</h3>
             <p>
                 Rekisteriin tallennettavia tietoja ovat:
                 <ul>
@@ -49,24 +49,24 @@
                 Nimeä lukuunottamatta yhteystiedot toimitetaan jäsenrekisteriin, jonka jälkeen ne poistetaan. Muut tiedot poistetaan satokauden päätyttyä.
             </p>
 
-        <h2>6. Säännönmukaiset tietolähteet</h2>
+        <h3>6. Säännönmukaiset tietolähteet</h3>
         <p>
             Rekisteriin tallennettavat tiedot saadaan asiakkaalta mm. www-lomakkeilla lähetetyistä viesteistä, sähköpostitse, puhelimitse,
             sosiaalisen median palvelujen kautta ja muista tilanteista, joissa asiakas luovuttaa tietojaan.
         </p>
 
-        <h2>7. Palvelimen sijainti</h2>
+        <h3>7. Palvelimen sijainti</h3>
         <p>
             Palvelin, jolla henkilötiedot säilötään sijaitsee Tukholmassa Ruotsissa Fly.io-palvelun palvelinkeskuksessa. Palvelimen ylläpidosta
             vastaa <a class="generic-link" href="https://fly.io/">Fly.io</a>.
         </p>
 
-        <h2>8. Tietojen luovutukset ja tietojen siirto EU:n tai ETA:n ulkopuolelle</h2>
+        <h3>8. Tietojen luovutukset ja tietojen siirto EU:n tai ETA:n ulkopuolelle</h3>
         <p>
             Tietoja ei luovuteta muille tahoille. Tietoja voidaan julkaista siltä osin kuin niin on sovittu osallistujan kanssa.
         </p>
 
-        <h2>9. Tarkastusoikeus ja oikeus vaatia tiedon korjaamista</h2>
+        <h3>9. Tarkastusoikeus ja oikeus vaatia tiedon korjaamista</h3>
         <p>
             Jokaisella rekisterissä olevalla henkilöllä on oikeus tarkistaa rekisteriin tallennetut tietonsa ja vaatia mahdollisen virheellisen tiedon
             korjaamista tai puutteellisen tiedon täydentämistä. Mikäli henkilö haluaa tarkistaa hänestä tallennetut tiedot tai vaatia niihin oikaisua,
@@ -74,7 +74,7 @@
             Rekisterinpitäjä vastaa asiakkaalle EU:n tietosuoja-asetuksessa säädetyssä ajassa (pääsääntöisesti kuukauden kuluessa).
         </p>
 
-        <h2>10. Muut henkilötietojen käsittelyyn liittyvät oikeudet</h2>
+        <h3>10. Muut henkilötietojen käsittelyyn liittyvät oikeudet</h3>
         <p>
             Rekisterissä olevalla henkilöllä on oikeus pyytää häntä koskevien henkilötietojen poistamiseen rekisteristä ("oikeus tulla unohdetuksi").
             Niin ikään rekisteröidyillä on muut
