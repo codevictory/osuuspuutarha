@@ -9,6 +9,7 @@
 @import './live/table.css';
 @import './live/yield.css';
 @import './pages/organic.css';
+@import './pages/index.css';
 
 /* Alerts and form errors used by phx.new */
 .alert {
@@ -152,12 +153,4 @@ main.container {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.registration-link {
-  font-size: 3rem;
-  margin-bottom: 6rem;
-  margin-top: 1rem;
-  text-align: center;
-  line-height: 3rem;
 }
