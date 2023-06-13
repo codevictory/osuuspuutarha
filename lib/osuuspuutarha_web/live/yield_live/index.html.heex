@@ -1,4 +1,4 @@
-<h1>Listing Yields</h1>
+<h1>Hello Albert!</h1>
 
 <%= if @live_action in [:new, :edit] do %>
   <.modal return_to={Routes.yield_index_path(@socket, :index)}>
@@ -27,7 +27,7 @@
   <tbody id="yields">
     <%= for yield <- @yields do %>
       <tr id={"yield-#{yield.id}"}>
-        <td><%= yield.date %></td>
+        <td><%= yield.date.day %>.<%= yield.date.month %>.<%= yield.date.year %></td>
         <td><%= yield.plant %></td>
         <td><%= yield.amount %></td>
         <td><%= yield.unit %></td>

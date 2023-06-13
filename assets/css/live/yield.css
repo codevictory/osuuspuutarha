@@ -1,0 +1,9 @@
+.date-picker {
+  display: flex;
+  align-items: baseline;
+  gap: 0.7em;
+}
+
+.date-picker select {
+  max-width: 8rem;
+}

@@ -16,19 +16,19 @@ defmodule OsuuspuutarhaWeb.YieldLive.Index do
 
   defp apply_action(socket, :edit, %{"id" => id}) do
     socket
-    |> assign(:page_title, "Edit Yield")
+    |> assign(:page_title, "Edit yield")
     |> assign(:yield, Harvest.get_yield!(id))
   end
 
   defp apply_action(socket, :new, _params) do
     socket
-    |> assign(:page_title, "New Yield")
-    |> assign(:yield, %Yield{})
+    |> assign(:page_title, "New yield")
+    |> assign(:yield, %Yield{unit: :kg, date: DateTime.utc_now()})
   end
 
   defp apply_action(socket, :index, _params) do
     socket
-    |> assign(:page_title, "Listing Yields")
+    |> assign(:page_title, "Good day, Albert!")
     |> assign(:yield, nil)
   end
 
