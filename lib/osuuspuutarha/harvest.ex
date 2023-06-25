@@ -21,6 +21,10 @@ defmodule Osuuspuutarha.Harvest do
     Repo.all(Yield)
   end
 
+  def get_sorted_by_date do
+    Repo.all(Yield |> order_by({:desc, :date}))
+  end
+
   @doc """
   Gets a single yield.
 

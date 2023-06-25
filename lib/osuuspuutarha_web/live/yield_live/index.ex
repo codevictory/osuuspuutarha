@@ -41,6 +41,6 @@ defmodule OsuuspuutarhaWeb.YieldLive.Index do
   end
 
   defp list_yields do
-    Harvest.list_yields()
+    Harvest.get_sorted_by_date()
   end
 end
