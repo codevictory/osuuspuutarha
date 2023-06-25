@@ -19,7 +19,6 @@
       <th>Date</th>
       <th>Plant</th>
       <th>Amount</th>
-      <th>Unit</th>
 
       <th></th>
     </tr>
@@ -27,10 +26,9 @@
   <tbody id="yields">
     <%= for yield <- @yields do %>
       <tr id={"yield-#{yield.id}"}>
-        <td><%= yield.date.day %>.<%= yield.date.month %>.<%= yield.date.year %></td>
+        <td><%= yield.date.day %>.<%= yield.date.month %></td>
         <td><%= Osuuspuutarha.Harvest.Parser.parse_plant(yield.plant) %></td>
-        <td><%= yield.amount %></td>
-        <td><%= yield.unit %></td>
+        <td><%= yield.amount %> <%= yield.unit %></td>
 
         <td>
           <span><%= live_redirect "Show", to: Routes.yield_show_path(@socket, :show, yield) %></span>
