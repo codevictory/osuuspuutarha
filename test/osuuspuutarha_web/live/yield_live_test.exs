@@ -4,8 +4,18 @@ defmodule OsuuspuutarhaWeb.YieldLiveTest do
   import Phoenix.LiveViewTest
   import Osuuspuutarha.HarvestFixtures
 
-  @create_attrs %{amount: "120.5", date: %{day: 7, month: 6, year: 2023}, plant: :salad, unit: :kg}
-  @update_attrs %{amount: "456.7", date: %{day: 8, month: 6, year: 2023}, plant: :carrot, unit: :kpl}
+  @create_attrs %{
+    amount: "120.5",
+    date: %{day: 7, month: 6, year: 2023},
+    plant: :lettuce,
+    unit: :kg
+  }
+  @update_attrs %{
+    amount: "456.7",
+    date: %{day: 8, month: 6, year: 2023},
+    plant: :carrot,
+    unit: :kpl
+  }
   @invalid_attrs %{amount: nil, date: %{day: 30, month: 2, year: 2023}, plant: nil, unit: nil}
 
   defp create_yield(_) do

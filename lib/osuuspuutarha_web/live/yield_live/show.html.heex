@@ -22,7 +22,7 @@
 
   <li>
     <strong>Plant:</strong>
-    <%= @yield.plant %>
+    <%= Osuuspuutarha.Harvest.Parser.parse_plant(@yield.plant) %>
   </li>
 
   <li>

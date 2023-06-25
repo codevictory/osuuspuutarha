@@ -13,7 +13,7 @@ defmodule Osuuspuutarha.HarvestFixtures do
       |> Enum.into(%{
         amount: "120.5",
         date: ~D[2023-06-07],
-        plant: :salad,
+        plant: :lettuce,
         unit: :kg
       })
       |> Osuuspuutarha.Harvest.create_yield()

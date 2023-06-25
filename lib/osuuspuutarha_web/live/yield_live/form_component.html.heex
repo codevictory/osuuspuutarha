@@ -13,13 +13,27 @@
     <%= label f, :date %>
     <div class="date-picker" >
       <%= date_select f, :date, default: DateTime.now!("Etc/UTC"), builder: fn b -> %>
-        <%= b.(:day, []) %> / <%= b.(:month, options: [{"01", "1"}, "02", "03", "04", "05", {"06", "6"}, "07", "08", "09", "10", "11", "12"]) %> / <%= b.(:year, options: ["2023"]) %>
+        <%= b.(:day, []) %> / <%= b.(:month, options: [{"01", "1"}, {"02", "2"}, {"03", "3"}, {"04", "4"}, {"05", "5"}, {"06", "6"}, {"07", "7"}, {"08", "8"}, {"09", "9"}, "10", "11", "12"]) %> / <%= b.(:year, options: ["2023"]) %>
       <% end %>
       <%= error_tag f, :date %>
     </div>
   
     <%= label f, :plant %>
-    <%= select f, :plant, Ecto.Enum.values(Osuuspuutarha.Harvest.Yield, :plant), prompt: "Choose a value" %>
+    <%= select f, :plant, [
+        "Lettuce": :lettuce,
+        "Tomato": :tomato,
+        "Cabbage": :cabbage,
+        "Pumpkin": :pumpkin,
+        "Zucchini": :zucchini,
+        "Cucumber": :cucumber,
+        "Melon": :melon,
+        "Sweet Corn": :sweet_corn,
+        "Bean": :bean,
+        "Parsnip": :parsnip,
+        "Carrot": :carrot,
+        "Beetroot": :beetroot
+      ], 
+      prompt: "Choose a value" %>
     <%= error_tag f, :plant %>
   
     <%= label f, :amount %>

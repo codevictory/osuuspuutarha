@@ -21,12 +21,12 @@ defmodule Osuuspuutarha.HarvestTest do
     end
 
     test "create_yield/1 with valid data creates a yield" do
-      valid_attrs = %{amount: "120.5", date: ~D[2023-06-07], plant: :salad, unit: :kg}
+      valid_attrs = %{amount: "120.5", date: ~D[2023-06-07], plant: :lettuce, unit: :kg}
 
       assert {:ok, %Yield{} = yield} = Harvest.create_yield(valid_attrs)
       assert yield.amount == Decimal.new("120.5")
       assert yield.date == ~D[2023-06-07]
-      assert yield.plant == :salad
+      assert yield.plant == :lettuce
       assert yield.unit == :kg
     end
 

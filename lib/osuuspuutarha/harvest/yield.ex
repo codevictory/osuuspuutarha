@@ -5,7 +5,23 @@ defmodule Osuuspuutarha.Harvest.Yield do
   schema "yields" do
     field :amount, :decimal
     field :date, :date
-    field :plant, Ecto.Enum, values: [:salad, :carrot, :cabbage]
+
+    field :plant, Ecto.Enum,
+      values: [
+        :lettuce,
+        :tomato,
+        :cabbage,
+        :pumpkin,
+        :zucchini,
+        :cucumber,
+        :melon,
+        :sweet_corn,
+        :bean,
+        :parsnip,
+        :carrot,
+        :beetroot
+      ]
+
     field :unit, Ecto.Enum, values: [:kg, :kpl]
 
     timestamps()
