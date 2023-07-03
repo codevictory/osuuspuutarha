@@ -11,6 +11,8 @@ defmodule Osuuspuutarha.Harvest.Yield do
         :lettuce,
         :tomato,
         :cabbage,
+        :white_cabbage,
+        :red_cabbage,
         :pumpkin,
         :zucchini,
         :cucumber,
@@ -19,7 +21,13 @@ defmodule Osuuspuutarha.Harvest.Yield do
         :bean,
         :parsnip,
         :carrot,
-        :beetroot
+        :beetroot,
+        :rhubarb,
+        :kale,
+        :cauliflower,
+        :broccoli,
+        :portulak,
+        :green_onions
       ]
 
     field :unit, Ecto.Enum, values: [:kg, :kpl]

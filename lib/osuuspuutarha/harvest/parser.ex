@@ -11,6 +11,14 @@ defmodule Osuuspuutarha.Harvest.Parser do
     "Cabbage"
   end
 
+  def parse_plant(:white_cabbage) do
+    "White Cabbage"
+  end
+
+  def parse_plant(:red_cabbage) do
+    "Red Cabbage"
+  end
+
   def parse_plant(:pumpkin) do
     "Pumpkin"
   end
@@ -45,5 +53,29 @@ defmodule Osuuspuutarha.Harvest.Parser do
 
   def parse_plant(:beetroot) do
     "Beetroot"
+  end
+
+  def parse_plant(:rhubarb) do
+    "Rhubarb"
+  end
+
+  def parse_plant(:kale) do
+    "Kale"
+  end
+
+  def parse_plant(:cauliflower) do
+    "Cauliflower"
+  end
+
+  def parse_plant(:broccoli) do
+    "Broccoli"
+  end
+
+  def parse_plant(:portulak) do
+    "Portulak"
+  end
+
+  def parse_plant(:green_onions) do
+    "Green Onions"
   end
 end
