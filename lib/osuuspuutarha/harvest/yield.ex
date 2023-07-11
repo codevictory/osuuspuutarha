@@ -27,7 +27,10 @@ defmodule Osuuspuutarha.Harvest.Yield do
         :cauliflower,
         :broccoli,
         :portulak,
-        :green_onions
+        :green_onions,
+        :mangold,
+        :paprika,
+        :chili
       ]
 
     field :unit, Ecto.Enum, values: [:kg, :kpl]

@@ -78,4 +78,16 @@ defmodule Osuuspuutarha.Harvest.Parser do
   def parse_plant(:green_onions) do
     "Green Onions"
   end
+
+  def parse_plant(:mangold) do
+    "Mangold"
+  end
+
+  def parse_plant(:paprika) do
+    "Paprika"
+  end
+
+  def parse_plant(:chili) do
+    "Chili"
+  end
 end
