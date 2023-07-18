@@ -30,7 +30,8 @@ defmodule Osuuspuutarha.Harvest.Yield do
         :green_onions,
         :mangold,
         :paprika,
-        :chili
+        :chili,
+        :kohlrabi
       ]
 
     field :unit, Ecto.Enum, values: [:kg, :kpl]

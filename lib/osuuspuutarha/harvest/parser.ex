@@ -90,4 +90,8 @@ defmodule Osuuspuutarha.Harvest.Parser do
   def parse_plant(:chili) do
     "Chili"
   end
+
+  def parse_plant(:kohlrabi) do
+    "Kohlrabi"
+  end
 end
