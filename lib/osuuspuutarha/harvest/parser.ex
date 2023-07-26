@@ -94,4 +94,20 @@ defmodule Osuuspuutarha.Harvest.Parser do
   def parse_plant(:kohlrabi) do
     "Kohlrabi"
   end
+
+  def parse_plant(:garlic) do
+    "Garlic"
+  end
+
+  def parse_plant(:onion) do
+    "Onion"
+  end
+
+  def parse_plant(:spinach) do
+    "Spinach"
+  end
+
+  def parse_plant(:parsley) do
+    "Parsley"
+  end
 end
