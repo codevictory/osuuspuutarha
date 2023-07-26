@@ -13,6 +13,8 @@
   </.modal>
 <% end %>
 
+<span><%= live_patch "New Yield", to: Routes.yield_index_path(@socket, :new) %></span>
+
 <table>
   <thead>
     <tr>
@@ -39,5 +41,3 @@
     <% end %>
   </tbody>
 </table>
-
-<span><%= live_patch "New Yield", to: Routes.yield_index_path(@socket, :new) %></span>
