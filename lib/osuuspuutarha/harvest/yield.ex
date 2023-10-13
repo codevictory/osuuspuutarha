@@ -35,7 +35,8 @@ defmodule Osuuspuutarha.Harvest.Yield do
         :garlic,
         :onion,
         :spinach,
-        :parsley
+        :parsley,
+        :corn
       ]
 
     field :unit, Ecto.Enum, values: [:kg, :kpl]

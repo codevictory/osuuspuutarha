@@ -110,4 +110,8 @@ defmodule Osuuspuutarha.Harvest.Parser do
   def parse_plant(:parsley) do
     "Parsley"
   end
+
+  def parse_plant(:corn) do
+    "Corn"
+  end
 end
