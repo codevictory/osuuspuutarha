@@ -7,9 +7,18 @@ defmodule Osuuspuutarha.Orders.Parser do
     end
   end
 
-  @spec parse_order_type(:community | :elo | :everyother | :full) :: <<_::64, _::_*8>>
+  @spec parse_order_type(
+          :community
+          | :elo
+          | :everyother
+          | :full
+          | :full_pikku
+          | :everyother_pikku
+          | :elo_pikku
+          | :community_pikku
+        ) :: <<_::64, _::_*8>>
   def parse_order_type(:full) do
-    "Joka viikko"
+    "Koko kausi"
   end
 
   def parse_order_type(:everyother) do
@@ -21,7 +30,23 @@ defmodule Osuuspuutarha.Orders.Parser do
   end
 
   def parse_order_type(:community) do
-    "Osuuskuntatoiminta"
+    "Viljely-yhteisö"
+  end
+
+  def parse_order_type(:full_pikku) do
+    "Koko kausi (pikkuboksi)"
+  end
+
+  def parse_order_type(:everyother_pikku) do
+    "Joka toinen viikko (pikkuboksi)"
+  end
+
+  def parse_order_type(:elo_pikku) do
+    "Elotilaus (pikkuboksi)"
+  end
+
+  def parse_order_type(:community_pikku) do
+    "Viljely-yhteisö (pikkuboksi)"
   end
 
   @spec parse_location(

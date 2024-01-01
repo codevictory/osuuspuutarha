@@ -24,7 +24,18 @@ defmodule Osuuspuutarha.Orders.Order do
         :merimasku
       ]
 
-    field :order_type, Ecto.Enum, values: [:full, :everyother, :elo, :community]
+    field :order_type, Ecto.Enum,
+      values: [
+        :full,
+        :everyother,
+        :elo,
+        :community,
+        :full_pikku,
+        :everyother_pikku,
+        :elo_pikku,
+        :community_pikku
+      ]
+
     field :pcode, :string
     field :phone, :string
     field :split_invoice, :boolean, default: false
