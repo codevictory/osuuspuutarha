@@ -33,6 +33,7 @@ defmodule Osuuspuutarha.Orders.Parser do
           | :ocean
           | :raisio
           | :viherlassila
+          | :merimasku
         ) :: <<_::48, _::_*16>>
   def parse_location(:koroinen) do
     "Koroinen"
@@ -64,6 +65,10 @@ defmodule Osuuspuutarha.Orders.Parser do
 
   def parse_location(:livonsaari) do
     "Livonsaari"
+  end
+
+  def parse_location(:merimasku) do
+    "Merimasku"
   end
 
   @spec parse_date(atom | %{:day => any, :month => any, :year => any, optional(any) => any}) ::

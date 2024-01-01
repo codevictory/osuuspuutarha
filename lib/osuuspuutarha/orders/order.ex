@@ -20,7 +20,8 @@ defmodule Osuuspuutarha.Orders.Order do
         :viherlassila,
         :kirjakahvila,
         :askainen,
-        :livonsaari
+        :livonsaari,
+        :merimasku
       ]
 
     field :order_type, Ecto.Enum, values: [:full, :everyother, :elo, :community]
