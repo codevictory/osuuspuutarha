@@ -1,7 +1,18 @@
 .registeration-button {
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 
 .offer-listing {
   max-width: 65rem;
+}
+
+.location-listing {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  list-style: disc;
+  line-height: 1rem;
+  justify-content: center;
+  margin-bottom: 4rem;
+  font-size: 2rem;
 }
