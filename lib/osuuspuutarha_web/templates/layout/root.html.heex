@@ -1,23 +1,35 @@
 <!DOCTYPE html>
 <html lang="fi">
-  <head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="csrf-token" content={csrf_token_value()}>
-    <%= live_title_tag assigns[:page_title] || "Etusivu", suffix: " · Osuuspuutarha" %>
-    <link phx-track-static rel="stylesheet" href={Routes.static_path(@conn, "/assets/app.css")}/>
-    <script defer phx-track-static type="text/javascript" src={Routes.static_path(@conn, "/assets/app.js")}></script>
-  </head>
-  <body>
-    <header>
-      <section class="container header-container">
-      
-        <a href="/"><img src={Routes.static_path(@conn, "/images/logo.jpg")} alt="Osuuspuutarha Logo"/></a>
-        <a href="/" class="header-title-link"><h1 class="header-title">Livonsaaren Osuuspuutarha</h1></a>
-      
-      </section>
-    </header>
-    <%= @inner_content %>
-  </body>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="csrf-token" content={csrf_token_value()}>
+  <meta property="og:title" content="Livonsaaren Osuuspuutarha - Luomuvihanneksia saaristosta" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://portaali.livonsaarenosuuspuutarha.fi" />
+  <meta property="og:image:url" content={Routes.static_path(@conn, "/images/logo.jpg" )} />
+  <meta property="og:description"
+    content="Livonsaaren Osuuspuutarha tuottaa avomaan luomuvihanneksia Naantalin saaristossa. Kuljetamme satolaatikot täynnä satokauden tuoreita vihanneksia kerran viikossa Turun seudun jakopaikkoihin." />
+  <meta property="og:locale" content="fi_FI" />
+  <link phx-track-static rel="stylesheet" href={Routes.static_path(@conn, "/assets/app.css" )} />
+  <script defer phx-track-static type="text/javascript" src={Routes.static_path(@conn, "/assets/app.js" )}></script>
+  <%= live_title_tag assigns[:page_title] || "Etusivu" , suffix: " · Osuuspuutarha" %>
+</head>
+
+<body>
+  <header>
+    <section class="container header-container">
+
+      <a href="/"><img src={Routes.static_path(@conn, "/images/logo.jpg" )} alt="Osuuspuutarha Logo" /></a>
+      <a href="/" class="header-title-link">
+        <h1 class="header-title">Livonsaaren Osuuspuutarha</h1>
+      </a>
+
+    </section>
+  </header>
+  <%= @inner_content %>
+</body>
+
 </html>
