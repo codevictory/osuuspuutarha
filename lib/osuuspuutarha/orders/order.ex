@@ -8,7 +8,7 @@ defmodule Osuuspuutarha.Orders.Order do
     field :email, :string
     field :even_weeks, :boolean, default: false
     field :fname, :string
-    field :is_member, :boolean, default: false
+    field :is_member, :boolean
     field :lname, :string
 
     field :location, Ecto.Enum,
