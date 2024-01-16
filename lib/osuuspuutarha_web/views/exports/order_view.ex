@@ -47,6 +47,7 @@ defmodule OsuuspuutarhaWeb.Exports.OrderView do
       Parser.parse_location(order.location),
       Parser.parse_boolean(order.even_weeks),
       Parser.parse_boolean(order.split_invoice),
+      Parser.parse_boolean(order.early_bird),
       Parser.parse_date(order.inserted_at),
       Parser.parse_date(order.updated_at)
     ]

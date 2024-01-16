@@ -39,6 +39,7 @@ defmodule Osuuspuutarha.Orders.Order do
     field :pcode, :string
     field :phone, :string
     field :split_invoice, :boolean, default: false
+    field :early_bird, :boolean, default: false
 
     timestamps()
   end
@@ -58,7 +59,8 @@ defmodule Osuuspuutarha.Orders.Order do
       :email,
       :is_member,
       :split_invoice,
-      :even_weeks
+      :even_weeks,
+      :early_bird
     ])
     |> validate_required([
       :order_type,
@@ -71,7 +73,8 @@ defmodule Osuuspuutarha.Orders.Order do
       :phone,
       :email,
       :is_member,
-      :split_invoice
+      :split_invoice,
+      :early_bird
     ])
   end
 end

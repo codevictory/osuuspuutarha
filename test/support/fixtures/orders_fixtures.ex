@@ -22,7 +22,8 @@ defmodule Osuuspuutarha.OrdersFixtures do
         order_type: :full,
         pcode: "some pcode",
         phone: "some phone",
-        split_invoice: true
+        split_invoice: true,
+        early_bird: true
       })
       |> Osuuspuutarha.Orders.create_order()
 

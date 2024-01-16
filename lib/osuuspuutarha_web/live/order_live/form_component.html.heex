@@ -8,89 +8,98 @@
     phx-target={@myself}
     phx-change="validate"
     phx-submit="save">
-  
+
     <%= label f, :order_type, "Valitse tilausmuoto" %>
-    <%= select f, 
-      :order_type, 
+    <%= select f,
+      :order_type,
       [
-        "Koko kausi": :full, 
+        "Koko kausi": :full,
         "Koko kausi (pikkuboksi)": :full_pikku,
-        "Joka toinen viikko": :everyother, 
+        "Joka toinen viikko": :everyother,
         "Joka toinen viikko (pikkuboksi)": :everyother_pikku,
-        "Elotilaus": :elo, 
+        "Elotilaus": :elo,
         "Elotilaus (pikkuboksi)": :elo_pikku,
         "Viljely-yhteisö": :community,
         "Viljely-yhteisö (pikkuboksi)": :community_pikku
-      ], 
-      prompt: "Ei valintaa" 
+      ],
+      prompt: "Ei valintaa"
     %>
-    <%= if @action == :edit && @changeset.data.order_type == :everyother do %>
+    <%= error_tag f, :order_type %>
+
+    <%= if @action == :edit && (@changeset.data.order_type == :everyother || @changeset.data.order_type == :everyother_pikku) do %>
       <div class="checkbox-container">
         <%= checkbox f, :even_weeks, class: "checkbox"  %>
         <%= label f, :even_weeks, "Parilliset viikot" %>
         <%= error_tag f, :even_weeks %>
       </div>
     <% end %>
-    <%= error_tag f, :order_type %>
-  
+
+    <%= if @action == :edit do %>
+      <div class="checkbox-container">
+        <%= checkbox f, :early_bird, class: "checkbox"  %>
+        <%= label f, :early_bird, "Early Bird" %>
+        <%= error_tag f, :early_bird %>
+      </div>
+    <% end %>
+
     <%= label f, :location, "Valitse jakopaikka" %>
-    <%= select f, 
-      :location, 
+    <%= select f,
+      :location,
       [
-        "Koroinen, Koroistentie 2": "koroinen", 
-        "Ocean Spirit, Linnankatu 37": "ocean", 
-        "Raisio, Timonkuja 8": "raisio", 
-        "Naantali, Alitalontie 20": "naantali", 
-        "Viherlassila, Alakyläntie 2": "viherlassila", 
-        "Kirjakahvila, Vanha Suurtori 3": "kirjakahvila", 
-        "Askainen, Askaistentie 986": "askainen", 
+        "Koroinen, Koroistentie 2": "koroinen",
+        "Ocean Spirit, Linnankatu 37": "ocean",
+        "Raisio, Timonkuja 8": "raisio",
+        "Naantali, Alitalontie 20": "naantali",
+        "Viherlassila, Alakyläntie 2": "viherlassila",
+        "Kirjakahvila, Vanha Suurtori 3": "kirjakahvila",
+        "Askainen, Askaistentie 986": "askainen",
         "Livonsaari, Pohjanpääntie 90": "livonsaari",
         "C/o Naantalin hunaja, Paltteentie 2, Merimasku": "merimasku"
-      ], 
-      prompt: "Ei valintaa" 
+      ],
+      prompt: "Ei valintaa"
     %>
     <%= error_tag f, :location %>
-  
+
     <%= label f, :is_member, "Jäsenyytesi" %>
-    <%= select f, 
-      :is_member, 
+    <%= select f,
+      :is_member,
       [
-        "Liity jäseneksi (kertamaksu 50€)": :false, 
-        "Olen jo Livonsaaren Osuuspuutarhan jäsen": :true, 
+        "Liity jäseneksi (kertamaksu 50€)": :false,
+        "Olen jo Livonsaaren Osuuspuutarhan jäsen": :true,
       ]
     %>
     <%= error_tag f, :is_member %>
-  
+
     <div class="checkbox-container">
       <%= checkbox f, :split_invoice, class: "checkbox"  %>
       <%= label f, :split_invoice, "Haluan maksaa laskun kahdessa erässä (sis. laskutuslisä 2,50€)" %>
       <%= error_tag f, :split_invoice %>
     </div>
-  
+
     <%= label f, :fname, "Etunimi" %>
     <%= text_input f, :fname %>
     <%= error_tag f, :fname %>
-  
+
     <%= label f, :lname, "Sukunimi" %>
     <%= text_input f, :lname %>
     <%= error_tag f, :lname %>
-  
+
     <%= label f, :address, "Katuosoite" %>
     <%= text_input f, :address %>
     <%= error_tag f, :address %>
-  
+
     <%= label f, :pcode, "Postinumero" %>
     <%= text_input f, :pcode %>
     <%= error_tag f, :pcode %>
-  
+
     <%= label f, :city, "Postitoimipaikka" %>
     <%= text_input f, :city %>
     <%= error_tag f, :city %>
-  
+
     <%= label f, :phone, "Puhelinnumero" %>
     <%= text_input f, :phone %>
     <%= error_tag f, :phone %>
-  
+
     <%= label f, :email, "Sähköpostiosoite" %>
     <%= text_input f, :email %>
     <%= error_tag f, :email %>
@@ -105,7 +114,7 @@
         </label>
       </div>
     <% end %>
-  
+
     <div>
       <%= submit @submit_text, phx_disable_with: "Tallennetaan..." %>
     </div>

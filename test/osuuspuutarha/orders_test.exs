@@ -8,7 +8,21 @@ defmodule Osuuspuutarha.OrdersTest do
 
     import Osuuspuutarha.OrdersFixtures
 
-    @invalid_attrs %{address: nil, city: nil, email: nil, even_weeks: nil, fname: nil, is_member: nil, lname: nil, location: nil, order_type: nil, pcode: nil, phone: nil, split_invoice: nil}
+    @invalid_attrs %{
+      address: nil,
+      city: nil,
+      email: nil,
+      even_weeks: nil,
+      fname: nil,
+      is_member: nil,
+      lname: nil,
+      location: nil,
+      order_type: nil,
+      pcode: nil,
+      phone: nil,
+      split_invoice: nil,
+      early_bird: nil
+    }
 
     test "list_orders/0 returns all orders" do
       order = order_fixture()
@@ -21,7 +35,21 @@ defmodule Osuuspuutarha.OrdersTest do
     end
 
     test "create_order/1 with valid data creates a order" do
-      valid_attrs = %{address: "some address", city: "some city", email: "some email", even_weeks: true, fname: "some fname", is_member: true, lname: "some lname", location: :koroinen, order_type: :full, pcode: "some pcode", phone: "some phone", split_invoice: true}
+      valid_attrs = %{
+        address: "some address",
+        city: "some city",
+        email: "some email",
+        even_weeks: true,
+        fname: "some fname",
+        is_member: true,
+        lname: "some lname",
+        location: :koroinen,
+        order_type: :full,
+        pcode: "some pcode",
+        phone: "some phone",
+        split_invoice: true,
+        early_bird: true
+      }
 
       assert {:ok, %Order{} = order} = Orders.create_order(valid_attrs)
       assert order.address == "some address"
@@ -36,6 +64,7 @@ defmodule Osuuspuutarha.OrdersTest do
       assert order.pcode == "some pcode"
       assert order.phone == "some phone"
       assert order.split_invoice == true
+      assert order.early_bird == true
     end
 
     test "create_order/1 with invalid data returns error changeset" do
@@ -44,7 +73,22 @@ defmodule Osuuspuutarha.OrdersTest do
 
     test "update_order/2 with valid data updates the order" do
       order = order_fixture()
-      update_attrs = %{address: "some updated address", city: "some updated city", email: "some updated email", even_weeks: false, fname: "some updated fname", is_member: false, lname: "some updated lname", location: :ocean, order_type: :everyother, pcode: "some updated pcode", phone: "some updated phone", split_invoice: false}
+
+      update_attrs = %{
+        address: "some updated address",
+        city: "some updated city",
+        email: "some updated email",
+        even_weeks: false,
+        fname: "some updated fname",
+        is_member: false,
+        lname: "some updated lname",
+        location: :ocean,
+        order_type: :everyother,
+        pcode: "some updated pcode",
+        phone: "some updated phone",
+        split_invoice: false,
+        early_bird: false
+      }
 
       assert {:ok, %Order{} = order} = Orders.update_order(order, update_attrs)
       assert order.address == "some updated address"
@@ -59,6 +103,7 @@ defmodule Osuuspuutarha.OrdersTest do
       assert order.pcode == "some updated pcode"
       assert order.phone == "some updated phone"
       assert order.split_invoice == false
+      assert order.early_bird == false
     end
 
     test "update_order/2 with invalid data returns error changeset" do

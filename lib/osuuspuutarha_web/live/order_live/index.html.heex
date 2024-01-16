@@ -21,80 +21,87 @@
   <thead>
     <tr>
       <th class="table_header">
-      <%= cond do %> 
-        <% @live_action == :sorted_desc && @column == :order_type -> %> <%= link "Tyyppi ↓", to: Routes.order_index_path(@socket, :sorted_asc, :order_type) %> 
+      <%= cond do %>
+        <% @live_action == :sorted_desc && @column == :order_type -> %> <%= link "Tyyppi ↓", to: Routes.order_index_path(@socket, :sorted_asc, :order_type) %>
         <% @live_action == :sorted_asc && @column == :order_type -> %> <%= link "Tyyppi ↑", to: Routes.order_index_path(@socket, :sorted_desc, :order_type) %>
-        <% true -> %> <%= link "Tyyppi", to: Routes.order_index_path(@socket, :sorted_asc, :order_type) %> 
+        <% true -> %> <%= link "Tyyppi", to: Routes.order_index_path(@socket, :sorted_asc, :order_type) %>
       <% end %>
       </th>
       <th class="table_header">
-      <%= cond do %> 
-        <% @live_action == :sorted_desc && @column == :location -> %> <%= link "Paikka ↓", to: Routes.order_index_path(@socket, :sorted_asc, :location) %> 
+      <%= cond do %>
+        <% @live_action == :sorted_desc && @column == :location -> %> <%= link "Paikka ↓", to: Routes.order_index_path(@socket, :sorted_asc, :location) %>
         <% @live_action == :sorted_asc && @column == :location -> %> <%= link "Paikka ↑", to: Routes.order_index_path(@socket, :sorted_desc, :location) %>
-        <% true -> %> <%= link "Paikka", to: Routes.order_index_path(@socket, :sorted_asc, :location) %> 
+        <% true -> %> <%= link "Paikka", to: Routes.order_index_path(@socket, :sorted_asc, :location) %>
       <% end %>
       </th>
       <th class="table_header">
-      <%= cond do %> 
-        <% @live_action == :sorted_desc && @column == :lname -> %> <%= link "Tilaaja ↓", to: Routes.order_index_path(@socket, :sorted_asc, :lname) %> 
+      <%= cond do %>
+        <% @live_action == :sorted_desc && @column == :lname -> %> <%= link "Tilaaja ↓", to: Routes.order_index_path(@socket, :sorted_asc, :lname) %>
         <% @live_action == :sorted_asc && @column == :lname -> %> <%= link "Tilaaja ↑", to: Routes.order_index_path(@socket, :sorted_desc, :lname) %>
-        <% true -> %> <%= link "Tilaaja", to: Routes.order_index_path(@socket, :sorted_asc, :lname) %> 
+        <% true -> %> <%= link "Tilaaja", to: Routes.order_index_path(@socket, :sorted_asc, :lname) %>
       <% end %>
       </th>
       <th class="table_header">
-      <%= cond do %> 
-        <% @live_action == :sorted_desc && @column == :city -> %> <%= link "Osoite ↓", to: Routes.order_index_path(@socket, :sorted_asc, :city) %> 
+      <%= cond do %>
+        <% @live_action == :sorted_desc && @column == :city -> %> <%= link "Osoite ↓", to: Routes.order_index_path(@socket, :sorted_asc, :city) %>
         <% @live_action == :sorted_asc && @column == :city -> %> <%= link "Osoite ↑", to: Routes.order_index_path(@socket, :sorted_desc, :city) %>
-        <% true -> %> <%= link "Osoite", to: Routes.order_index_path(@socket, :sorted_asc, :city) %> 
+        <% true -> %> <%= link "Osoite", to: Routes.order_index_path(@socket, :sorted_asc, :city) %>
       <% end %>
       </th>
       <th class="table_header">
-      <%= cond do %> 
-        <% @live_action == :sorted_desc && @column == :phone -> %> <%= link "Puh. ↓", to: Routes.order_index_path(@socket, :sorted_asc, :phone) %> 
+      <%= cond do %>
+        <% @live_action == :sorted_desc && @column == :phone -> %> <%= link "Puh. ↓", to: Routes.order_index_path(@socket, :sorted_asc, :phone) %>
         <% @live_action == :sorted_asc && @column == :phone -> %> <%= link "Puh. ↑", to: Routes.order_index_path(@socket, :sorted_desc, :phone) %>
-        <% true -> %> <%= link "Puh.", to: Routes.order_index_path(@socket, :sorted_asc, :phone) %> 
+        <% true -> %> <%= link "Puh.", to: Routes.order_index_path(@socket, :sorted_asc, :phone) %>
       <% end %>
       </th>
       <th class="table_header">
-      <%= cond do %> 
-        <% @live_action == :sorted_desc && @column == :email -> %> <%= link "Säpö ↓", to: Routes.order_index_path(@socket, :sorted_asc, :email) %> 
+      <%= cond do %>
+        <% @live_action == :sorted_desc && @column == :email -> %> <%= link "Säpö ↓", to: Routes.order_index_path(@socket, :sorted_asc, :email) %>
         <% @live_action == :sorted_asc && @column == :email -> %> <%= link "Säpö ↑", to: Routes.order_index_path(@socket, :sorted_desc, :email) %>
-        <% true -> %> <%= link "Säpö", to: Routes.order_index_path(@socket, :sorted_asc, :email) %> 
+        <% true -> %> <%= link "Säpö", to: Routes.order_index_path(@socket, :sorted_asc, :email) %>
       <% end %>
       </th>
       <th class="table_header">
-      <%= cond do %> 
-        <% @live_action == :sorted_desc && @column == :is_member -> %> <%= link "Jäsen? ↓", to: Routes.order_index_path(@socket, :sorted_asc, :is_member) %> 
+      <%= cond do %>
+        <% @live_action == :sorted_desc && @column == :is_member -> %> <%= link "Jäsen? ↓", to: Routes.order_index_path(@socket, :sorted_asc, :is_member) %>
         <% @live_action == :sorted_asc && @column == :is_member -> %> <%= link "Jäsen? ↑", to: Routes.order_index_path(@socket, :sorted_desc, :is_member) %>
-        <% true -> %> <%= link "Jäsen?", to: Routes.order_index_path(@socket, :sorted_asc, :is_member) %> 
+        <% true -> %> <%= link "Jäsen?", to: Routes.order_index_path(@socket, :sorted_asc, :is_member) %>
       <% end %>
       </th>
       <th class="table_header">
-      <%= cond do %> 
-        <% @live_action == :sorted_desc && @column == :split_invoice -> %> <%= link "Kaksi laskua? ↓", to: Routes.order_index_path(@socket, :sorted_asc, :split_invoice) %> 
+      <%= cond do %>
+        <% @live_action == :sorted_desc && @column == :split_invoice -> %> <%= link "Kaksi laskua? ↓", to: Routes.order_index_path(@socket, :sorted_asc, :split_invoice) %>
         <% @live_action == :sorted_asc && @column == :split_invoice -> %> <%= link "Kaksi laskua? ↑", to: Routes.order_index_path(@socket, :sorted_desc, :split_invoice) %>
-        <% true -> %> <%= link "Kaksi laskua?", to: Routes.order_index_path(@socket, :sorted_asc, :split_invoice) %> 
+        <% true -> %> <%= link "Kaksi laskua?", to: Routes.order_index_path(@socket, :sorted_asc, :split_invoice) %>
       <% end %>
       </th>
       <th class="table_header">
-      <%= cond do %> 
-        <% @live_action == :sorted_desc && @column == :even_weeks -> %> <%= link "Parilliset viikot ↓", to: Routes.order_index_path(@socket, :sorted_asc, :even_weeks) %> 
+      <%= cond do %>
+        <% @live_action == :sorted_desc && @column == :even_weeks -> %> <%= link "Parilliset viikot ↓", to: Routes.order_index_path(@socket, :sorted_asc, :even_weeks) %>
         <% @live_action == :sorted_asc && @column == :even_weeks -> %> <%= link "Parilliset viikot ↑", to: Routes.order_index_path(@socket, :sorted_desc, :even_weeks) %>
-        <% true -> %> <%= link "Parilliset viikot", to: Routes.order_index_path(@socket, :sorted_asc, :even_weeks) %> 
+        <% true -> %> <%= link "Parilliset viikot", to: Routes.order_index_path(@socket, :sorted_asc, :even_weeks) %>
       <% end %>
       </th>
       <th class="table_header">
-      <%= cond do %> 
-        <% @live_action == :sorted_desc && @column == :inserted_at -> %> <%= link "Lisätty ↓", to: Routes.order_index_path(@socket, :sorted_asc, :inserted_at) %> 
+      <%= cond do %>
+        <% @live_action==:sorted_desc && @column==:early_bird -> %> <%= link "Early Bird? ↓" , to: Routes.order_index_path(@socket, :sorted_asc, :early_bird) %>
+        <% @live_action==:sorted_asc && @column==:early_bird -> %> <%= link "Early Bird? ↑" , to: Routes.order_index_path(@socket, :sorted_desc, :early_bird) %>
+        <% true -> %> <%= link "Early Bird?" , to: Routes.order_index_path(@socket, :sorted_asc, :early_bird) %>
+      <% end %>
+      </th>
+      <th class="table_header">
+      <%= cond do %>
+        <% @live_action == :sorted_desc && @column == :inserted_at -> %> <%= link "Lisätty ↓", to: Routes.order_index_path(@socket, :sorted_asc, :inserted_at) %>
         <% @live_action == :sorted_asc && @column == :inserted_at -> %> <%= link "Lisätty ↑", to: Routes.order_index_path(@socket, :sorted_desc, :inserted_at) %>
-        <% true -> %> <%= link "Lisätty", to: Routes.order_index_path(@socket, :sorted_asc, :inserted_at) %> 
+        <% true -> %> <%= link "Lisätty", to: Routes.order_index_path(@socket, :sorted_asc, :inserted_at) %>
       <% end %>
       </th>
       <th class="table_header">
-      <%= cond do %> 
-        <% @live_action == :sorted_desc && @column == :updated_at -> %> <%= link "Viimeisin muutos ↓", to: Routes.order_index_path(@socket, :sorted_asc, :updated_at) %> 
+      <%= cond do %>
+        <% @live_action == :sorted_desc && @column == :updated_at -> %> <%= link "Viimeisin muutos ↓", to: Routes.order_index_path(@socket, :sorted_asc, :updated_at) %>
         <% @live_action == :sorted_asc && @column == :updated_at -> %> <%= link "Viimeisin muutos ↑", to: Routes.order_index_path(@socket, :sorted_desc, :updated_at) %>
-        <% true -> %> <%= link "Viimeisin muutos", to: Routes.order_index_path(@socket, :sorted_asc, :updated_at) %> 
+        <% true -> %> <%= link "Viimeisin muutos", to: Routes.order_index_path(@socket, :sorted_asc, :updated_at) %>
       <% end %>
       </th>
 
@@ -113,6 +120,7 @@
         <td><%= Osuuspuutarha.Orders.Parser.parse_boolean(order.is_member) %></td>
         <td><%= Osuuspuutarha.Orders.Parser.parse_boolean(order.split_invoice) %></td>
         <td><%= Osuuspuutarha.Orders.Parser.parse_boolean(order.even_weeks) %></td>
+        <td><%= Osuuspuutarha.Orders.Parser.parse_boolean(order.early_bird) %></td>
         <td><%= Osuuspuutarha.Orders.Parser.parse_date(order.inserted_at) %></td>
         <td><%= Osuuspuutarha.Orders.Parser.parse_date(order.updated_at) %></td>
 

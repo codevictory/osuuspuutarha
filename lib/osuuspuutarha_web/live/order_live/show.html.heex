@@ -2,92 +2,94 @@
 
 <%= if @live_action in [:edit] do %>
   <.modal return_to={Routes.order_show_path(@socket, :show, @order)}>
-    <.live_component
-      module={OsuuspuutarhaWeb.OrderLive.FormComponent}
-      id={@order.id}
-      title={@page_title}
-      action={@live_action}
-      submit_text="Tallenna"
-      has_privacy_consent={false}
-      order={@order}
-      return_to={Routes.order_show_path(@socket, :show, @order)}
-    />
+    <.live_component module={OsuuspuutarhaWeb.OrderLive.FormComponent} id={@order.id} title={@page_title}
+      action={@live_action} submit_text="Tallenna" has_privacy_consent={false} order={@order}
+      return_to={Routes.order_show_path(@socket, :show, @order)} />
   </.modal>
-<% end %>
+  <% end %>
 
-<ul>
+    <ul>
 
-  <li>
-    <strong>Tilausmuoto:</strong>
-    <%= @order.order_type %>
-  </li>
+      <li>
+        <strong>Tilausmuoto:</strong>
+        <%= @order.order_type %>
+      </li>
 
-  <li>
-    <strong>Jakopaikka:</strong>
-    <%= @order.location %>
-  </li>
+      <li>
+        <strong>Jakopaikka:</strong>
+        <%= @order.location %>
+      </li>
 
-  <li>
-    <strong>Etunimi:</strong>
-    <%= @order.fname %>
-  </li>
+      <li>
+        <strong>Etunimi:</strong>
+        <%= @order.fname %>
+      </li>
 
-  <li>
-    <strong>Sukunimi:</strong>
-    <%= @order.lname %>
-  </li>
+      <li>
+        <strong>Sukunimi:</strong>
+        <%= @order.lname %>
+      </li>
 
-  <li>
-    <strong>Osoite:</strong>
-    <%= @order.address %>
-  </li>
+      <li>
+        <strong>Osoite:</strong>
+        <%= @order.address %>
+      </li>
 
-  <li>
-    <strong>Postinumero:</strong>
-    <%= @order.pcode %>
-  </li>
+      <li>
+        <strong>Postinumero:</strong>
+        <%= @order.pcode %>
+      </li>
 
-  <li>
-    <strong>Postitoimipaikka:</strong>
-    <%= @order.city %>
-  </li>
+      <li>
+        <strong>Postitoimipaikka:</strong>
+        <%= @order.city %>
+      </li>
 
-  <li>
-    <strong>Puhelinnumero:</strong>
-    <%= @order.phone %>
-  </li>
+      <li>
+        <strong>Puhelinnumero:</strong>
+        <%= @order.phone %>
+      </li>
 
-  <li>
-    <strong>Sähköpostiosoite:</strong>
-    <%= @order.email %>
-  </li>
+      <li>
+        <strong>Sähköpostiosoite:</strong>
+        <%= @order.email %>
+      </li>
 
-  <li>
-    <strong>Jäsen?</strong>
-    <%= @order.is_member %>
-  </li>
+      <li>
+        <strong>Jäsen?</strong>
+        <%= @order.is_member %>
+      </li>
 
-  <li>
-    <strong>Kahdella laskulla:</strong>
-    <%= @order.split_invoice %>
-  </li>
+      <li>
+        <strong>Kahdella laskulla:</strong>
+        <%= @order.split_invoice %>
+      </li>
 
-  <li>
-    <strong>Parilliset viikot:</strong>
-    <%= @order.even_weeks %>
-  </li>
+      <li>
+        <strong>Parilliset viikot:</strong>
+        <%= @order.even_weeks %>
+      </li>
 
-  <li>
-    <strong>Lisätty:</strong>
-    <%= @order.inserted_at.day %>.<%= @order.inserted_at.month %>.<%= @order.inserted_at.year %>
-  </li>
+      <li>
+        <strong>Early bird:</strong>
+        <%= @order.early_bird %>
+      </li>
 
-  <li>
-    <strong>Viimeisin muutos:</strong>
-    <%= @order.updated_at.day %>.<%= @order.updated_at.month %>.<%= @order.updated_at.year %>
-  </li>
+      <li>
+        <strong>Lisätty:</strong>
+        <%= @order.inserted_at.day %>.<%= @order.inserted_at.month %>.<%= @order.inserted_at.year %>
+      </li>
 
-</ul>
+      <li>
+        <strong>Viimeisin muutos:</strong>
+        <%= @order.updated_at.day %>.<%= @order.updated_at.month %>.<%= @order.updated_at.year %>
+      </li>
 
-<span><%= live_patch "Muokkaa", to: Routes.order_show_path(@socket, :edit, @order), class: "button" %></span> |
-<span><%= live_redirect "Takaisin", to: Routes.order_index_path(@socket, :index) %></span>
+    </ul>
+
+    <span>
+      <%= live_patch "Muokkaa" , to: Routes.order_show_path(@socket, :edit, @order), class: "button" %>
+    </span> |
+    <span>
+      <%= live_redirect "Takaisin" , to: Routes.order_index_path(@socket, :index) %>
+    </span>

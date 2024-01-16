@@ -6,7 +6,7 @@ defmodule OsuuspuutarhaWeb.OrderLive.Index do
 
   @impl true
   def mount(_params, _session, socket) do
-    {:ok, assign(socket, :orders, Orders.list_orders())}
+    {:ok, assign(socket, :orders, Orders.get_sorted_by(:desc, :inserted_at))}
   end
 
   @impl true

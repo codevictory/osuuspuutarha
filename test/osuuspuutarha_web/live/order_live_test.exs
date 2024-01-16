@@ -4,9 +4,51 @@ defmodule OsuuspuutarhaWeb.OrderLiveTest do
   import Phoenix.LiveViewTest
   import Osuuspuutarha.OrdersFixtures
 
-  @create_attrs %{address: "some address", city: "some city", email: "some email", even_weeks: true, fname: "some fname", is_member: true, lname: "some lname", location: :koroinen, order_type: :full, pcode: "some pcode", phone: "some phone", split_invoice: true}
-  @update_attrs %{address: "some updated address", city: "some updated city", email: "some updated email", even_weeks: false, fname: "some updated fname", is_member: false, lname: "some updated lname", location: :ocean, order_type: :everyother, pcode: "some updated pcode", phone: "some updated phone", split_invoice: false}
-  @invalid_attrs %{address: nil, city: nil, email: nil, even_weeks: false, fname: nil, is_member: false, lname: nil, location: nil, order_type: nil, pcode: nil, phone: nil, split_invoice: false}
+  @create_attrs %{
+    address: "some address",
+    city: "some city",
+    email: "some email",
+    even_weeks: true,
+    fname: "some fname",
+    is_member: true,
+    lname: "some lname",
+    location: :koroinen,
+    order_type: :full,
+    pcode: "some pcode",
+    phone: "some phone",
+    split_invoice: true,
+    early_bird: true
+  }
+  @update_attrs %{
+    address: "some updated address",
+    city: "some updated city",
+    email: "some updated email",
+    even_weeks: false,
+    fname: "some updated fname",
+    is_member: false,
+    lname: "some updated lname",
+    location: :ocean,
+    order_type: :everyother,
+    pcode: "some updated pcode",
+    phone: "some updated phone",
+    split_invoice: false,
+    early_bird: false
+  }
+  @invalid_attrs %{
+    address: nil,
+    city: nil,
+    email: nil,
+    even_weeks: false,
+    fname: nil,
+    is_member: false,
+    lname: nil,
+    location: nil,
+    order_type: nil,
+    pcode: nil,
+    phone: nil,
+    split_invoice: false,
+    early_bird: false
+  }
 
   defp create_order(_) do
     order = order_fixture()
