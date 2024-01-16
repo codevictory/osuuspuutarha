@@ -17,6 +17,7 @@ defmodule OsuuspuutarhaWeb.Exports.OrderView do
     "Jakopaikka",
     "Parilliset viikot",
     "Jaettu lasku",
+    "Early Bird",
     "Lisätty",
     "Päivitetty"
   ]
