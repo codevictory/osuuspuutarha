@@ -21,7 +21,8 @@ defmodule Osuuspuutarha.Orders.Order do
         :kirjakahvila,
         :askainen,
         :livonsaari,
-        :merimasku
+        :merimasku,
+        :masku
       ]
 
     field :order_type, Ecto.Enum,
