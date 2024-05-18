@@ -13,7 +13,9 @@
   </.modal>
 <% end %>
 
-<span><%= live_patch "New Yield", to: Routes.yield_index_path(@socket, :new) %></span>
+<span class="new-yield-link"><%= live_patch "New Yield", to: Routes.yield_index_path(@socket, :new) %></span>
+
+<%= link "Download as Excel", to: Routes.exports_yield_path(@socket, :index) %>
 
 <table>
   <thead>

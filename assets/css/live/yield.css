@@ -7,3 +7,16 @@
 .date-picker select {
   max-width: 8rem;
 }
+
+.new-yield-link a {
+  padding: 1em;
+}
+
+.new-yield-link {
+  margin: 1.5em;
+  padding-top: 5px;
+  font-size: large;
+  font-weight: bold;
+  background-color: #e5e5ea;
+  border-radius: 5%;
+}

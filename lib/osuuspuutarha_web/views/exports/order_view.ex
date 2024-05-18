@@ -31,7 +31,7 @@ defmodule OsuuspuutarhaWeb.Exports.OrderView do
 
   def report_generator(orders) do
     rows = orders |> Enum.map(&row(&1))
-    %Workbook{sheets: [%Sheet{name: "Orders", rows: [@header] ++ rows}]}
+    %Workbook{sheets: [%Sheet{name: "Tilaukset", rows: [@header] ++ rows}]}
   end
 
   def row(order) do

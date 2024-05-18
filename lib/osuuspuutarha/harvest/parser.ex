@@ -114,4 +114,18 @@ defmodule Osuuspuutarha.Harvest.Parser do
   def parse_plant(:corn) do
     "Corn"
   end
+
+  @spec parse_date(atom | %{:day => any, :month => any, :year => any, optional(any) => any}) ::
+          <<_::16, _::_*8>>
+  def parse_date(date) do
+    "#{date.day}.#{date.month}.#{date.year}"
+  end
+
+  def parse_unit(:kg) do
+    "kg"
+  end
+
+  def parse_unit(:kpl) do
+    "kpl"
+  end
 end
