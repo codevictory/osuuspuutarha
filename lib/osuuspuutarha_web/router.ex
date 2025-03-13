@@ -29,7 +29,7 @@ defmodule OsuuspuutarhaWeb.Router do
 
     get "/", PageController, :index
     get "/tietosuoja", PageController, :privacy
-    get "/luomu", PageController, :organic
+    # get "/luomu", PageController, :organic // uncomment in couple of years after certificate is valid again
 
     live "/ilmoittautuminen", OrderLive.Registration, :index
     live "/ilmoittautuminen/uusi", OrderLive.Registration, :new
