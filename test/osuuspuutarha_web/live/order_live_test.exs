@@ -27,7 +27,7 @@ defmodule OsuuspuutarhaWeb.OrderLiveTest do
     fname: "some updated fname",
     is_member: false,
     lname: "some updated lname",
-    location: :ocean,
+    location: :kissakahvila,
     order_type: :everyother,
     pcode: "some updated pcode",
     phone: "some updated phone",

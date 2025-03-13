@@ -82,7 +82,7 @@ defmodule Osuuspuutarha.OrdersTest do
         fname: "some updated fname",
         is_member: false,
         lname: "some updated lname",
-        location: :ocean,
+        location: :kissakahvila,
         order_type: :everyother,
         pcode: "some updated pcode",
         phone: "some updated phone",
@@ -98,7 +98,7 @@ defmodule Osuuspuutarha.OrdersTest do
       assert order.fname == "some updated fname"
       assert order.is_member == false
       assert order.lname == "some updated lname"
-      assert order.location == :ocean
+      assert order.location == :kissakahvila
       assert order.order_type == :everyother
       assert order.pcode == "some updated pcode"
       assert order.phone == "some updated phone"

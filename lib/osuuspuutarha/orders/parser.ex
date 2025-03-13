@@ -55,7 +55,7 @@ defmodule Osuuspuutarha.Orders.Parser do
           | :koroinen
           | :livonsaari
           | :naantali
-          | :ocean
+          | :kissakahvila
           | :raisio
           | :viherlassila
           | :merimasku
@@ -65,8 +65,8 @@ defmodule Osuuspuutarha.Orders.Parser do
     "Koroinen"
   end
 
-  def parse_location(:ocean) do
-    "Ocean Spirit"
+  def parse_location(:kissakahvila) do
+    "Turku, Martinkatu 1, Kissakahvila"
   end
 
   def parse_location(:raisio) do

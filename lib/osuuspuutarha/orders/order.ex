@@ -14,7 +14,7 @@ defmodule Osuuspuutarha.Orders.Order do
     field :location, Ecto.Enum,
       values: [
         :koroinen,
-        :ocean,
+        :kissakahvila,
         :raisio,
         :naantali,
         :viherlassila,
