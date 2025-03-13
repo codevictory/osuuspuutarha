@@ -38,3 +38,5 @@ settings.json
 # Run script
 run.sh
 
+# Prod db variable script
+prod_db_vars

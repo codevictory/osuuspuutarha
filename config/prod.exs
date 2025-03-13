@@ -8,5 +8,3 @@ config :osuuspuutarha, OsuuspuutarhaWeb.Endpoint,
   ]
 
 config :logger, level: :info
-
-config :osuuspuutarha, OsuuspuutarhaWeb.Endpoint, force_ssl: [rewrite_on: [:x_forwarded_proto]]
