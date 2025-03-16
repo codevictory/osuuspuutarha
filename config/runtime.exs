@@ -77,7 +77,7 @@ if config_env() == :prod do
     dkim: [
       s: "email",
       d: "livonsaarenosuuspuutarha.fi",
-      private_key: {:pem_plain, File.read!("priv/keys/dkim_private.pem")}
+      private_key: {:pem_plain, System.get_env("DKIM_KEY")}
     ],
     retries: 2,
     no_mx_lookups: false
