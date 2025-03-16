@@ -64,10 +64,6 @@ if config_env() == :prod do
     secret_key_base: secret_key_base
 
   # ## Configuring the mailer
-  #
-  # In production you need to configure the mailer to use a different adapter.
-  # Also, you may need to configure the Swoosh API client of your choice if you
-  # are not using SMTP. Here is an example of the configuration:
 
   config :osuuspuutarha, Osuuspuutarha.Mailer,
     adapter: Swoosh.Adapters.SMTP,
@@ -81,7 +77,7 @@ if config_env() == :prod do
     dkim: [
       s: "email",
       d: "livonsaarenosuuspuutarha.fi",
-      private_key: {:pem_plain, File.read!("priv/keys/domain.private")}
+      private_key: {:pem_plain, File.read!("priv/keys/dkim_private.pem")}
     ],
     retries: 2,
     no_mx_lookups: false
