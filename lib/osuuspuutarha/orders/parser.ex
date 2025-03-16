@@ -66,7 +66,7 @@ defmodule Osuuspuutarha.Orders.Parser do
   end
 
   def parse_location(:kissakahvila) do
-    "Turku, Martinkatu 1, Kissakahvila"
+    "Kissakahvila"
   end
 
   def parse_location(:raisio) do
@@ -105,5 +105,57 @@ defmodule Osuuspuutarha.Orders.Parser do
           <<_::16, _::_*8>>
   def parse_date(date) do
     "#{date.day}.#{date.month}.#{date.year}"
+  end
+
+  @spec parse_location_long(
+          :askainen
+          | :kirjakahvila
+          | :koroinen
+          | :livonsaari
+          | :naantali
+          | :kissakahvila
+          | :raisio
+          | :viherlassila
+          | :merimasku
+          | :masku
+        ) :: <<_::48, _::_*16>>
+  def parse_location_long(:koroinen) do
+    "Turku, Koroistentie 2, Koroinen"
+  end
+
+  def parse_location_long(:kissakahvila) do
+    "Turku, Martinkatu 1, Kissakahvila"
+  end
+
+  def parse_location_long(:raisio) do
+    "Raisio, Timonkuja 8"
+  end
+
+  def parse_location_long(:naantali) do
+    "Naantali, Alitalontie 20"
+  end
+
+  def parse_location_long(:viherlassila) do
+    "Turku, Alakyläntie 2, Viherlassila"
+  end
+
+  def parse_location_long(:kirjakahvila) do
+    "Turku, Vanha Suurtori 3, Kirjakahvila"
+  end
+
+  def parse_location_long(:askainen) do
+    "Askainen, Askaistentie 751, Askaisten Holvi"
+  end
+
+  def parse_location_long(:livonsaari) do
+    "Livonsaari, Pohjanpääntie 90"
+  end
+
+  def parse_location_long(:merimasku) do
+    "Merimasku, Paltteentie 2, ℅ Naantalin hunaja"
+  end
+
+  def parse_location_long(:masku) do
+    "Masku, Mäksmäentie 9"
   end
 end
