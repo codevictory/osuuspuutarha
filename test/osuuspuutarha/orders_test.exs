@@ -34,7 +34,7 @@ defmodule Osuuspuutarha.OrdersTest do
       assert Orders.get_order!(order.id) == order
     end
 
-    test "create_order/1 with valid data creates a order" do
+    test "process_order/1 with valid data creates a order" do
       valid_attrs = %{
         address: "some address",
         city: "some city",
@@ -51,7 +51,7 @@ defmodule Osuuspuutarha.OrdersTest do
         early_bird: true
       }
 
-      assert {:ok, %Order{} = order} = Orders.create_order(valid_attrs)
+      assert {:ok, %Order{} = order} = Orders.process_order(valid_attrs)
       assert order.address == "some address"
       assert order.city == "some city"
       assert order.email == "some email"
@@ -67,8 +67,8 @@ defmodule Osuuspuutarha.OrdersTest do
       assert order.early_bird == true
     end
 
-    test "create_order/1 with invalid data returns error changeset" do
-      assert {:error, %Ecto.Changeset{}} = Orders.create_order(@invalid_attrs)
+    test "process_order/1 with invalid data returns error changeset" do
+      assert {:error, %Ecto.Changeset{}} = Orders.process_order(@invalid_attrs)
     end
 
     test "update_order/2 with valid data updates the order" do

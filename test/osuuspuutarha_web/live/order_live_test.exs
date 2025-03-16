@@ -50,13 +50,13 @@ defmodule OsuuspuutarhaWeb.OrderLiveTest do
     early_bird: false
   }
 
-  defp create_order(_) do
+  defp process_order(_) do
     order = order_fixture()
     %{order: order}
   end
 
   describe "Index" do
-    setup [:create_order]
+    setup [:process_order]
 
     test "lists all orders", %{conn: conn, order: order} do
       {:ok, _index_live, html} = live(conn, Routes.order_index_path(conn, :index))
@@ -118,7 +118,7 @@ defmodule OsuuspuutarhaWeb.OrderLiveTest do
   end
 
   describe "Show" do
-    setup [:create_order]
+    setup [:process_order]
 
     test "displays order", %{conn: conn, order: order} do
       {:ok, _show_live, html} = live(conn, Routes.order_show_path(conn, :show, order))

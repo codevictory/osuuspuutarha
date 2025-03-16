@@ -41,7 +41,7 @@ defmodule OsuuspuutarhaWeb.OrderLive.FormComponent do
   end
 
   defp save_order(socket, :new, order_params) do
-    case Orders.create_order(order_params) do
+    case Orders.process_order(order_params) do
       {:ok, _order} ->
         {:noreply,
          socket

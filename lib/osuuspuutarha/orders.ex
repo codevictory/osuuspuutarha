@@ -8,6 +8,9 @@ defmodule Osuuspuutarha.Orders do
 
   alias Osuuspuutarha.Orders.Order
 
+  alias Osuuspuutarha.ConfirmationSender
+  alias Osuuspuutarha.Mailer
+
   @doc """
   Returns the list of orders.
 
@@ -42,17 +45,32 @@ defmodule Osuuspuutarha.Orders do
 
   ## Examples
 
-      iex> create_order(%{field: value})
+      iex> process_order(%{field: value})
       {:ok, %Order{}}
 
-      iex> create_order(%{field: bad_value})
+      iex> process_order(%{field: bad_value})
       {:error, %Ecto.Changeset{}}
 
   """
-  def create_order(attrs \\ %{}) do
+  def process_order(attrs \\ %{}) do
+    case insert_order(attrs) do
+      {:ok, order} ->
+        send_confirmation_email_and_deliver(order)
+
+      {:error, changeset} ->
+        {:error, changeset}
+    end
+  end
+
+  defp insert_order(attrs) do
     %Order{}
     |> Order.changeset(attrs)
     |> Repo.insert()
+  end
+
+  defp send_confirmation_email_and_deliver(order) do
+    ConfirmationSender.send_confirmation_email(order)
+    |> Mailer.deliver()
   end
 
   @doc """

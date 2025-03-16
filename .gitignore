@@ -40,3 +40,6 @@ run.sh
 
 # Prod db variable script
 prod_db_vars
+
+# DKIM private key
+/priv/keys/dkim_private.pem

@@ -25,7 +25,7 @@ defmodule Osuuspuutarha.OrdersFixtures do
         split_invoice: true,
         early_bird: true
       })
-      |> Osuuspuutarha.Orders.create_order()
+      |> Osuuspuutarha.Orders.process_order()
 
     order
   end
