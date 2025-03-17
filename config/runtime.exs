@@ -75,9 +75,9 @@ if config_env() == :prod do
     auth: :never,
     port: 25,
     dkim: [
-      s: "email",
+      s: "default",
       d: "livonsaarenosuuspuutarha.fi",
-      private_key: {:pem_plain, System.get_env("DKIM_KEY")}
+      private_key: {:pem_plain, File.read!("/var/www/osuuspuutarha/priv/keys/dkim_private.pem")}
     ],
     retries: 2,
     no_mx_lookups: false
