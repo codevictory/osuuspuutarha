@@ -70,7 +70,7 @@ if config_env() == :prod do
     relay: "mail.tietokonepaja.fi",
     username: System.get_env("SMTP_USERNAME"),
     password: System.get_env("SMTP_PASSWORD"),
-    ssl: true,
+    ssl: false,
     tls: :always,
     auth: :always,
     port: 587,
